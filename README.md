@@ -1,10 +1,10 @@
 # Anime List App with React.js
-This Project is an anime listing app for searching animes with modern UI. \
+This Project is an anime listing app for searching animes with modern UI. 
 ## Figma Design :
 ### https://www.figma.com/file/bsu0cCVDdxXMoNBj3zhcAw/Anime-List?node-id=0%3A1 
 ## API:
 Jikan Unofficial MyAnimeList API (Open Source Public API). \
-Documentation: \
+Documentation: 
 ### https://jikan.docs.apiary.io/#
 
 # Create React App

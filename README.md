@@ -7,6 +7,14 @@ Jikan Unofficial MyAnimeList API (Open Source Public API). \
 Documentation: 
 ### https://jikan.docs.apiary.io/#
 
+## Technologies Used:
+HTML \
+SCSS \
+JavaScript \
+React.js (UI Library) \
+Redux (State Management Library) \
+React Router (Client Side Routing Library)
+
 # Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

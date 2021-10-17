@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Header from './components/Header';
+import MainContent from "./Pages/MainContent";
+import SubMenu from './components/SubMenu';
+import styles from './styles/App.module.scss';
 
-function App() {
+
+export default function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Router>
+        <div className={styles.mainSection}>
+          <div className={styles.header}>
+            <Header />
+          </div>
+          <div className={styles.mainContent}>
+            <MainContent />
+          </div>
+        </div>
+        <div className={styles.subMenu}>
+          <SubMenu />
+        </div>
+      </Router>
+    </Fragment>
   );
 }
 
-export default App;

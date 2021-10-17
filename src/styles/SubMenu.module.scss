@@ -1,0 +1,10 @@
+.subMenu {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  background: rgba(196, 196, 196, 0.3);
+  border-radius: 15px;
+  padding: 10px;
+  height: calc(100% - 30px);
+  width: calc(100% - 30px);
+}

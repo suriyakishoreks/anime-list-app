@@ -1,3 +1,22 @@
+Anime List
+API - End Points:
+-> Individual Anime
+https://api.jikan.moe/v3/anime/{id}  eg: https://api.jikan.moe/v3/anime/11757
+-> Search
+https://jikan.docs.apiary.io/#reference/0/search/search-request-example+schema
+-> Season
+https://jikan.docs.apiary.io/#reference/0/season/season-request-example+schema
+-> Upcoming
+https://api.jikan.moe/v3/season/later
+-> schedule (for a day or week)
+https://jikan.docs.apiary.io/#reference/0/schedule/schedule-request-example+schema
+data.day
+-> genre 
+https://jikan.docs.apiary.io/#reference/0/genre/genre-request-example+schema
+data.anime
+-> Top Airing
+https://api.jikan.moe/v3/top/anime/1/airing
+data.top
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

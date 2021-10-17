@@ -1,0 +1,27 @@
+.mainSection {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 70vw;
+}
+.subMenu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 30vw;
+}
+.header {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 15vh;
+  justify-content: space-between;
+  width: 100%;
+}
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  width: 100%;
+}

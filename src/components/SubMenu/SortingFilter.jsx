@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from '../styles/SortingFilter.module.scss';
+import styles from '../../styles/SortingFilter.module.scss';
 
 export default function SortingFilter() {
 

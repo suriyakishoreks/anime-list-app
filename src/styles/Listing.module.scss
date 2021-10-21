@@ -1,18 +1,12 @@
-.listing {
-    position: relative;
-    color: white;
-    padding: 0 10px;
-    h2 {
-        padding-left: 10px;
-        margin-bottom: 5px;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 24px;
-        color: rgba(255, 255, 255, 0.5);
-    }
+.title {
+    padding-left: 10px;
+    margin-bottom: 5px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.5);
 }
-
-.listingContent {
+.listing {
     background: rgba(196, 196, 196, 0.3);
     border-radius: 15px;
     padding: 10px;

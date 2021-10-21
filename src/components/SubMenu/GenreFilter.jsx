@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from '../styles/GenreFilter.module.scss';
+import styles from '../../styles/GenreFilter.module.scss';
 
 export default function GenreFilter() {
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from '../styles/SeasonFilter.module.scss';
+import styles from '../../styles/SeasonFilter.module.scss';
 
 export default function SeasonFilter() {
 

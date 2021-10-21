@@ -1,6 +1,10 @@
 import { DAYS } from '../constants/index';
 
 export const endPoints = {
+    anime: function (animeId, request = '') {
+        return request ? `https://api.jikan.moe/v3/anime/${animeId}/${request}` 
+                : `https://api.jikan.moe/v3/anime/${animeId}` ;
+    },
     season: function (season, year) {
         return {
             id: `${season.title} ${year}`,

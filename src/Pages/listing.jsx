@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router';
 import { endPoints } from "../components/API/endpoints";
 
@@ -11,7 +11,7 @@ export default function Listing() {
     const history = useHistory();
     const { id } = useParams();
     const [anime, setAnime] = useState([]);
-    const [endPoint,setEndPoint] = useState(endPoints.upcoming());
+    const [endPoint, setEndPoint] = useState(endPoints.upcoming());
 
     useEffect(() => {
         async function fetchData() {
@@ -29,15 +29,15 @@ export default function Listing() {
         return <h3>No Results found!</h3>;
 
     return (
-        <div className={styles.listing}>
-            <h2>{endPoint.id}</h2>
-            <div className={styles.listingContent}>
+        <Fragment>
+            <h2 className={styles.title}>{endPoint.id}</h2>
+            <div className={styles.listing}>
                 {anime.map(e => (
                     <div onClick={() => { onClickHandler(e.mal_id); }} className={styles.poster} key={e.mal_id}>
                         <img className={styles.img} src={e.image_url} alt="img" />
                     </div>
                 ))}
             </div>
-        </div>
+        </Fragment>
     );
 }

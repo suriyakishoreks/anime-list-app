@@ -7,8 +7,8 @@ export default function Header() {
   
   return (
     <Fragment>
-      <h1 className={styles.logo}>Anime List</h1>
-      <Link className={styles.menu} to="/">Home</Link>
+      {/* <h1 className={styles.logo}>Anime List</h1> */}
+      <Link className={styles.logo} to="/">Anime List</Link>
       <div>
         <SearchBar />
       </div>

@@ -20,12 +20,14 @@
 
 .poster {
   height: 100%;
+  max-width: 260px;
   border-radius: 15px 0 0 15px;
 }
 
 .textContent {
   width: inherit;
   padding: 10px 25px;
+  overflow: hidden;
   color: rgba(255, 255, 255, 0.7);
   &:hover {
     cursor: pointer;

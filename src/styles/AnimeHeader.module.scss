@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+.titleSection {
+    text-align: start;
+    margin-right: 20px;
+}
+.title {
+    font-weight: 700;
+    font-size: 22px;
+}
+.titleEnglish {
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+}
+.infoSection {
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+    text-align: end;
+}

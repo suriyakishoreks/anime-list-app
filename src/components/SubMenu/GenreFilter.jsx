@@ -1,5 +1,5 @@
 import React from 'react';
-
+import CheckBox from '../CheckBox';
 import { GENRE } from '../constants';
 import styles from '../../styles/GenreFilter.module.scss';
 
@@ -12,7 +12,7 @@ export default function GenreFilter() {
             </div>
             <div className={styles.genreFilterInner}>
                 {Object.keys(GENRE).map(key =>
-                    <div className={styles.genre}>{GENRE[key].title}</div>
+                    <CheckBox value={GENRE[key].title} />
                 )}
             </div>
         </div>

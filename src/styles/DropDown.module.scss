@@ -1,12 +1,34 @@
 .dropDown {
-    background: rgba(196, 196, 196, 0.4);
+    position: relative;
+    background-color: rgba(196, 196, 196, 0.4);
     border-radius: 5px;
-    padding: 2px 5px;
-}
-
-.active {
-    display: flex;
-    justify-content: space-between;
-    font-weight: 500;
-    font-size: 14px;
+    &:hover {
+        background: rgba(196, 196, 196, 0.8);
+        cursor: default;
+    }
+    select {
+        background: url(../assets/dropDown.svg) no-repeat 95% 50%;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        color: white;
+        padding: 5px 8px;
+        font-weight: 600;
+        font-size: 13px;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        option {
+            background: #8c8aad;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        &:not(:-internal-list-box) {
+            overflow: hidden;
+        }
+    }
 }

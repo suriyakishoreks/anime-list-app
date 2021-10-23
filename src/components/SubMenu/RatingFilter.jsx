@@ -1,5 +1,6 @@
 import React from 'react';
 
+import CheckBox from '../CheckBox';
 import { RATING } from '../constants/index';
 
 import styles from '../../styles/RatingFilter.module.scss';
@@ -13,7 +14,7 @@ export default function RatingFilter() {
             </div>
             <div className={styles.ratingContainer}>
                 {Object.keys(RATING).map(key =>
-                    <div className={styles.rating}>{RATING[key].title}</div>
+                    <CheckBox value={RATING[key].title} />
                 )}
             </div>
         </div>

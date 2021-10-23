@@ -7,7 +7,7 @@ import styles from '../../styles/SeasonFilter.module.scss';
 
 export default function SeasonFilter() {
 
-    const [season, setSeason] = useState('Fall');
+    const [season, setSeason] = useState('fall');
     const [year, setYear] = useState('2021');
 
     return (

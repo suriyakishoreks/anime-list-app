@@ -8,7 +8,7 @@ export const endPoints = {
     season: function (season, year) {
         return {
             id: `${season.title} ${year}`,
-            url: `https://api.jikan.moe/v3/season/${year}/${season}`,
+            url: `https://api.jikan.moe/v3/season/${year}/${season.id}`,
             path: "anime"
         }
     },

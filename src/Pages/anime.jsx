@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import { useParams } from 'react-router';
+import { useParams, useHistory } from 'react-router';
 import { Link } from "react-router-dom";
 import { endPoints } from '../components/API/endpoints';
 import fetchAPI from '../components/API/index';
@@ -34,27 +34,52 @@ export default function Anime() {
             <div className={styles.rightContainer}>
                 <AnimeHeader anime={anime} />
                 <p className={styles.synopsis}>{anime.synopsis}</p>
-                <div>
-                    <h2 className={styles.contentHeading}>Related Anime</h2>
-                    <div className={styles.contentCardOuter}>
-                        <div className={styles.contentCardInner}>
-                            <ul>
-                                {Object.keys(anime.related ?? {})?.map(key =>
-                                    <Fragment>
-                                        {anime.related?.[key]?.map(element =>
-                                            element.type === 'anime' ?
-                                                <li><Link className={styles.logo} to={`/anime/${element.mal_id}`}>
-                                                    {`${element.name} (${key})`}</Link></li> : null)}
-                                    </Fragment>)}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h2 className={styles.contentHeading}>Recommendations</h2>
-                    <div className={styles.contentCard}>
+                <Related anime={anime} />
+                <Recommendations recommendations={recommendations} />
+            </div>
+        </div>
+    );
+}
 
-                    </div>
+function Related({ anime }) {
+    return (
+        <div>
+            <h2 className={styles.contentHeading}>Related Anime</h2>
+            <div className={styles.contentCardOuter}>
+                <div className={styles.contentCardInner} style={{WebkitJustifyContent: "flex-start"}}>
+                    <ul className={styles.relatedList}>
+                        {Object.keys(anime.related ?? {})?.map(key =>
+                            <Fragment>
+                                {anime.related?.[key]?.map(element =>
+                                    element.type === 'anime' ?
+                                        <li><Link className={styles.relatedItem} to={`/anime/${element.mal_id}`}>
+                                            {`${element.name} (${key})`}</Link></li> : null)}
+                            </Fragment>)}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+function Recommendations({ recommendations }) {
+
+    const history = useHistory();
+
+    function onClickHandler(id) {
+        history.push(`/anime/${id}`);
+    }
+
+    return (
+        <div>
+            <h2 className={styles.contentHeading}>Recommendations</h2>
+            <div className={styles.contentCardOuter}>
+                <div className={styles.contentCardInner} style={{maxHeight: "400px"}}>
+                    {recommendations.map(element =>
+                        <div className={styles.recommendationsPoster} onClick={()=>{ onClickHandler(element.mal_id)}}>
+                            <img src={element.image_url} alt="poster" />
+                            <div>{element.recommendation_count}</div>
+                        </div>)}
                 </div>
             </div>
         </div>

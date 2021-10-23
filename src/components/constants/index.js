@@ -5,13 +5,14 @@ export const UPDATE_SEARCH = "UPDATE_SEARCH";
 export const API_UPDATE = "API_UPDATE";
 export const CLEAR_SEARCH = "CLEAR_SEARCH";
 
-// API related Constants
+// App related Constants
 export const SEASONS = {
     winter: { title: "Winter", id: "winter" },
     spring: { title: "Spring", id: "spring" },
     summer: { title: "Summer", id: "summer" },
     fall: { title: "Fall", id: "fall" },
 }
+
 export const DAYS = [
     "sunday",
     "monday",
@@ -19,7 +20,27 @@ export const DAYS = [
     "wednesday",
     "thursday",
     "friday",
-    "saturday",];
+    "saturday"];
+
+export function getYearList() {
+    const date = new Date();
+    const currentYear = date.getFullYear();
+    const yearList = [];
+    for (let itr = Number(currentYear); itr >= 1990; itr--) {
+        yearList.push(itr);
+    }
+    return yearList;
+}
+
+export const RATING = {
+    g: { title: "All Age", id: "g" },
+    pg: { title: "Children", id: "pg" },
+    pg13: { title: "Thirteen  +", id: "pg13" },
+    r17: { title: "Seventeen +", id: "r17" },
+    r: { title: "R +", id: "r" },
+    rx: { title: "RX", id: "rx" },
+}
+
 export const GENRE = {
     action: { title: "Action", id: 1 },
     adventure: { title: "Adventure", id: 2 },

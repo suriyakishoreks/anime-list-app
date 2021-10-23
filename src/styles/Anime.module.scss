@@ -46,10 +46,14 @@
     position: relative;
     margin: 15px 0;
     padding: 10px;
-    
 }
 .contentCardInner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px 5px;
     width: 100%;
+    padding: 10px;
     max-height: 250px;
     overflow-y: scroll;
     &::-webkit-scrollbar {
@@ -64,5 +68,45 @@
     }
     &::-webkit-scrollbar-thumb:hover {
         background: rgb(196, 196, 196);
+    }
+}
+.relatedList {
+    line-height: 30px;
+}
+
+.relatedItem {
+    font-weight: 500;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    &:hover {
+        color: rgb(255, 255, 255);
+    }
+}
+.recommendationsPoster {
+    position: relative;
+    height: 210px;
+    width: 150px;
+    transition: transform 400ms;
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+    div {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        padding: 2px 8px;
+        font-weight: 800;
+        font-size: 18px;
+        background: rgba(2, 121, 134, 0.9);
+        border-radius: 0px 15px;
     }
 }

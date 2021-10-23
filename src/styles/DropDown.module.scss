@@ -1,0 +1,12 @@
+.dropDown {
+    background: rgba(196, 196, 196, 0.4);
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+
+.active {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 14px;
+}

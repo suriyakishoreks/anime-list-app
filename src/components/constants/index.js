@@ -13,21 +13,23 @@ export const SEASONS = {
     fall: { title: "Fall", id: "fall" },
 }
 
-export const DAYS = [
-    "sunday",
-    "monday",
-    "tuesday",
-    "wednesday",
-    "thursday",
-    "friday",
-    "saturday"];
+export const DAYS = {
+    0: { title: "Sunday", id: "sunday" },
+    1: { title: "Monday", id: "monday" },
+    2: { title: "Tuesday", id: "tuesday" },
+    3: { title: "Wednesday", id: "wednesday" },
+    4: { title: "Thursday", id: "thursday" },
+    5: { title: "Friday", id: "friday" },
+    6: { title: "Saturday", id: "saturday" },
+}
+
 
 export function getYearList() {
     const date = new Date();
     const currentYear = date.getFullYear();
-    const yearList = [];
+    const yearList = {};
     for (let itr = Number(currentYear); itr >= 1990; itr--) {
-        yearList.push(itr);
+        yearList[itr] = {title: itr, id: itr};
     }
     return yearList;
 }

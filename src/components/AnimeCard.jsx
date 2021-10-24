@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from '../styles/AnimeCard.module.scss';
 
-export default function AnimeCard({anime}) { 
+export default function AnimeCard({ anime }) {
     return (
         <div className={styles.animeCard}>
             <div className={styles.scoreCard}>
@@ -11,8 +11,10 @@ export default function AnimeCard({anime}) {
             </div>
             <p className={styles.details}>{anime.rating}</p>
             <p className={styles.details}>{anime.status}</p>
-            {anime.genres?.map(element => <div className={styles.genre}>{element.name}</div>)}
-            {anime.explicit_genres?.map(element => <div className={styles.genre}>{element.name}</div>)}
+            {anime.genres?.map(element =>
+                <div key={element.mal_id} className={styles.genre}>{element.name}</div>)}
+            {anime.explicit_genres?.map(element =>
+                <div key={element.mal_id} className={styles.genre}>{element.name}</div>)}
         </div>
     );
 }

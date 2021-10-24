@@ -49,10 +49,10 @@ function Related({ anime }) {
                 <div className={styles.contentCardInner} style={{WebkitJustifyContent: "flex-start"}}>
                     <ul className={styles.relatedList}>
                         {Object.keys(anime.related ?? {})?.map(key =>
-                            <Fragment>
+                            <Fragment key={key}>
                                 {anime.related?.[key]?.map(element =>
                                     element.type === 'anime' ?
-                                        <li><Link className={styles.relatedItem} to={`/anime/${element.mal_id}`}>
+                                        <li key={element.mal_id} ><Link className={styles.relatedItem} to={`/anime/${element.mal_id}`}>
                                             {`${element.name} (${key})`}</Link></li> : null)}
                             </Fragment>)}
                     </ul>
@@ -76,7 +76,7 @@ function Recommendations({ recommendations }) {
             <div className={styles.contentCardOuter}>
                 <div className={styles.contentCardInner} style={{maxHeight: "400px"}}>
                     {recommendations.map(element =>
-                        <div className={styles.recommendationsPoster} onClick={()=>{ onClickHandler(element.mal_id)}}>
+                        <div key={element.mal_id} className={styles.recommendationsPoster} onClick={()=>{ onClickHandler(element.mal_id)}}>
                             <img src={element.image_url} alt="poster" />
                             <div>{element.recommendation_count}</div>
                         </div>)}

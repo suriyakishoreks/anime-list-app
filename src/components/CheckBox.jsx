@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import styles from '../styles/CheckBox.module.scss';
 
-export default function CheckBox({ value }) {
-
-    const [selected, setSelected] = useState(false);
+export default function CheckBox({ value, setSelected, selected, id }) {
 
     return (
-        <div className={`${styles.container} ${selected ? styles.selected : ''}`}
-            onClick={() => { setSelected(prevState => !prevState) }}>
+        <div className={`${styles.container} ${selected.has(id) ? styles.selected : ''}`}
+            onClick={() => { setSelected(id) }}>
             {value}</div>
     );
 }

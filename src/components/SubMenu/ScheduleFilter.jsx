@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {useHistory} from "react-router";
 
 import DropDown from '../DropDown';
 import { DAYS } from '../constants';
@@ -7,7 +8,12 @@ import styles from '../../styles/ScheduleFilter.module.scss';
 
 export default function ScheduleFilter() {
 
-    const [day, setDay] = useState('Monday');
+    const history = useHistory();
+    const [day, setDay] = useState(0);
+    
+    function onClickHandler() {
+        history.push(`/listing/schedule?day=${day}`);
+    }
 
     return (
         <div className={styles.scheduleFilter}>
@@ -19,10 +25,10 @@ export default function ScheduleFilter() {
                         active={day}
                         setActive={(val) => { setDay(val); }}
                         containerWidth='150px'
+                        dropDownKeys={Object.keys(DAYS)}
                         dropDownList={DAYS} />
-
                 </div>
-                <button className={styles.scheduleButton}>Go</button>
+                <button onClick={onClickHandler} className={styles.scheduleButton}>Go</button>
             </div>
         </div>
     );

@@ -7,9 +7,23 @@ export const endPoints = {
     },
     season: function (season, year) {
         return {
-            id: `${season.title} ${year}`,
-            url: `https://api.jikan.moe/v3/season/${year}/${season.id}`,
+            id: `${season.title} ${year.title}`,
+            url: `https://api.jikan.moe/v3/season/${year.id}/${season.id}`,
             path: "anime"
+        }
+    },
+    schedule: function (queryDay) {
+        return {
+            id: `Anime on ${queryDay.title}`,
+            url: `https://api.jikan.moe/v3/schedule/${queryDay.id}`,
+            path: queryDay.id
+        };
+    },
+    search: function (searchQuery, pageNo, orderBy, sort, genre, rating) {
+        return {
+            id: `Search Results`,
+            url: `https://api.jikan.moe/v3/search/anime?q=${searchQuery}&page=${pageNo}&order_by=${orderBy}&sort=${sort}&genre=${genre}&rated=${rating}`,
+            path: 'results'
         }
     },
     genre: function (genre) {
@@ -21,7 +35,7 @@ export const endPoints = {
     },
     airingToday: function () {
         const date = new Date();
-        const today = DAYS[date.getDay()];
+        const today = DAYS[date.getDay()].id;
         return {
             id: "Airing Today",
             url: `https://api.jikan.moe/v3/schedule/${today}`,

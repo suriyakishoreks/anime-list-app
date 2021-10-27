@@ -1,27 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from "react-redux";
+
+import { updateGenreFilter } from '../store/action';
+
 import CheckBox from '../CheckBox';
 import { GENRE } from '../constants';
 import styles from '../../styles/GenreFilter.module.scss';
 
 export default function GenreFilter() {
 
+    const clearFilter = useSelector((state) => state.clearFilter);
+    const dispatch = useDispatch();
     const [selectedFilter, setSelectedFilter] = useState(new Set());
 
+    useEffect(() => {
+        setSelectedFilter(new Set());
+    }, [clearFilter]);
+
     function onClickHandler(id) {
-        if (selectedFilter.has(id)) {
-            setSelectedFilter(prev => {
-                prev.delete(id);
-                console.log(prev);
-                return new Set([...prev]);
-            });
+        const newSet = new Set([...selectedFilter]);
+        if (newSet.size === 4)
+            return;
+        else if (newSet.has(id)) {
+            newSet.delete(id);
+            setSelectedFilter(newSet);
         }
         else {
-            setSelectedFilter(prev => {
-                prev.add(id);
-                console.log(prev);
-                return new Set([...prev]);
-            });
+            newSet.add(id);
+            setSelectedFilter(newSet);
         }
+        let genreFilter = ``;
+        newSet.forEach(filter => {
+            genreFilter = `${genreFilter}${genreFilter ? `,${filter}` : filter}`;
+        })
+        dispatch(updateGenreFilter({
+            filterSet: newSet,
+            value: genreFilter
+        }));
     }
 
     return (

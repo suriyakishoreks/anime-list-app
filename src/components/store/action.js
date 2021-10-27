@@ -1,43 +1,42 @@
 import {
-  API_UPDATE,
-  UPDATE_CURRENTMOVIES,
-  UPDATE_SEARCH,
-  UPDATE_MOVIE,
-  CLEAR_SEARCH
+  UPDATE_GENREFILTER,
+  UPDATE_RATINGFILTER,
+  UPDATE_SEARCHFILTER,
+  CLEAR_FILTER,
+  INITIALIZE_FILTER
 } from "../constants/index";
 
-export function clearSearch(payload) {
+export function clearFilter(payload) {
   return {
-    type: CLEAR_SEARCH,
+    type: CLEAR_FILTER,
     payload
   };
 }
 
-export function updateCurrentMovies(payload) {
+export function updateSearchFilter(payload) {
   return {
-    type: UPDATE_CURRENTMOVIES,
+    type: UPDATE_SEARCHFILTER,
     payload
   };
 }
 
-export function updateSearch(payload) {
+export function updateGenreFilter(payload) {
   return {
-    type: UPDATE_SEARCH,
+    type: UPDATE_GENREFILTER,
     payload
   };
 }
 
-export function apiUpdate(payload) {
+export function updateRatingFilter(payload) {
   return {
-    type: API_UPDATE,
+    type: UPDATE_RATINGFILTER,
     payload
   };
 }
 
-export function updateMovie(payload) {
+export function initializeFilter(payload) {
   return {
-    type: UPDATE_MOVIE,
+    type: INITIALIZE_FILTER,
     payload
-  };
+  }
 }
-

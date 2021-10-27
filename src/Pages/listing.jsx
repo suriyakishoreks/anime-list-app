@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react';
 import { useParams, useHistory, useLocation } from 'react-router-dom';
 import { endPoints } from "../components/API/endpoints";
 
-import {DAYS, SEASONS, getYearList} from '../components/constants/index';
+import {DAYS, SEASONS, getYearList, SEARCHOBJECT} from '../components/constants/index';
 
 import styles from '../styles/Listing.module.scss';
 
@@ -13,30 +13,45 @@ export default function Listing() {
     const history = useHistory();
     const location = useLocation();
     const { id } = useParams();
+    const [API, setAPI] = useState(null);
     const [anime, setAnime] = useState([]);
     const [title, setTitle] = useState("Results");
+
+
+    useEffect(() => {
+        let controller = new AbortController();
+        async function fetchData(endPoint) {
+            const data = await fetchAPI(endPoint.url, controller.signal);
+            setAnime(data[endPoint.path] ? data[endPoint.path] : []);
+            controller = null;
+        }
+        API && fetchData(API);
+        return () => controller?.abort();
+    },[API]);
     
     useEffect(() => {
-        async function fetchData(endPoint) {
-            const data = await fetchAPI(endPoint.url);
-            setAnime(data[endPoint.path] ? data[endPoint.path] : []);
-        }
         const query = new URLSearchParams(location.search);
         if (id === "season") {
             const year = query.get("year");
             const season = query.get("season");
             const yearList = getYearList();
             const endPoint = endPoints.season(SEASONS[season], yearList[year]);
-            fetchData(endPoint);
+            setAPI(endPoint);
             setTitle(endPoint.id);
         } else if (id === "schedule") {
             let day = query.get("day");
             day = DAYS[day];
             const endPoint = endPoints.schedule(day);
-            fetchData(endPoint);
+            setAPI(endPoint);
             setTitle(endPoint.id);
         } else if (id === "search") {
-            
+            const sObj = SEARCHOBJECT;
+            sObj.searchQuery = query.get("q");
+            sObj.rating = query.get("rating");
+            sObj.genre = query.get("genre");
+            const endPoint = endPoints.search(sObj);
+            setAPI(endPoint);
+            setTitle(endPoint.id);
         }
     }, [id, location]);
 

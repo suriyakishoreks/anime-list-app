@@ -1,14 +1,23 @@
 import {
-  API_UPDATE,
-  UPDATE_CURRENTMOVIES,
-  UPDATE_SEARCH,
-  UPDATE_MOVIE,
-  CLEAR_SEARCH
+  UPDATE_GENREFILTER,
+  UPDATE_RATINGFILTER,
+  UPDATE_SEARCHFILTER,
+  CLEAR_FILTER,
+  INITIALIZE_FILTER
 } from "../constants/index";
 
 const defaultState = {
-  search: "",
-  clearSearch: 0,
+  searchFilter: "",
+  genreFilter: {
+    filterSet: new Set(),
+    value: ""
+  },
+  ratingFilter: {
+    filterSet: new Set(),
+    value: ""
+  },
+  clearFilter: false,
+  initializeFilter: false,
   movie: null,
   currentMovies: [],
   movieList: []
@@ -16,30 +25,30 @@ const defaultState = {
 
 function RUDUX_REDUCER(state = defaultState, action) {
   switch (action.type) {
-    case CLEAR_SEARCH:
+    case CLEAR_FILTER:
       return {
         ...state,
-        clearSearch: action.payload
+        clearFilter: action.payload
       };
-    case UPDATE_SEARCH:
+    case UPDATE_SEARCHFILTER:
       return {
         ...state,
-        search: action.payload
+        searchFilter: action.payload
       };
-    case UPDATE_MOVIE:
+    case UPDATE_RATINGFILTER:
       return {
         ...state,
-        movie: action.payload
+        ratingFilter: action.payload
       };
-    case UPDATE_CURRENTMOVIES:
+    case UPDATE_GENREFILTER:
       return {
         ...state,
-        currentMovies: action.payload
+        genreFilter: action.payload
       };
-    case API_UPDATE:
+    case INITIALIZE_FILTER:
       return {
         ...state,
-        movieList: action.payload
+        initializeFilter: action.payload
       };
     default:
       return {

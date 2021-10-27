@@ -19,10 +19,10 @@ export const endPoints = {
             path: queryDay.id
         };
     },
-    search: function (searchQuery, pageNo, orderBy, sort, genre, rating) {
+    search: function (obj) {
         return {
             id: `Search Results`,
-            url: `https://api.jikan.moe/v3/search/anime?q=${searchQuery}&page=${pageNo}&order_by=${orderBy}&sort=${sort}&genre=${genre}&rated=${rating}`,
+            url: `https://api.jikan.moe/v3/search/anime?q=${obj.searchQuery}&page=${obj.pageNo}&order_by=${obj.orderBy}&sort=${obj.sort}&genre=${obj.genre}&rated=${obj.rating}`,
             path: 'results'
         }
     },

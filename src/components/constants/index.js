@@ -1,9 +1,9 @@
 // Redux Related Constants
-export const UPDATE_CURRENTMOVIES = "UPDATE_CURRENTMOVIES";
-export const UPDATE_MOVIE = "UPDATE_MOVIE";
-export const UPDATE_SEARCH = "UPDATE_SEARCH";
-export const API_UPDATE = "API_UPDATE";
-export const CLEAR_SEARCH = "CLEAR_SEARCH";
+export const UPDATE_GENREFILTER = "UPDATE_GENRE_FILTER";
+export const UPDATE_RATINGFILTER = "UPDATE_RATING_FILTER";
+export const UPDATE_SEARCHFILTER = "UPDATE_SEARCH_FILTER";
+export const CLEAR_FILTER = "CLEAR_FILTER";
+export const INITIALIZE_FILTER = "INITIALIZE_FILTER";
 
 // App related Constants
 export const SEASONS = {
@@ -29,7 +29,7 @@ export function getYearList() {
     const currentYear = date.getFullYear();
     const yearList = {};
     for (let itr = Number(currentYear); itr >= 1990; itr--) {
-        yearList[itr] = {title: itr, id: itr};
+        yearList[itr] = { title: itr, id: itr };
     }
     return yearList;
 }
@@ -88,4 +88,13 @@ export const GENRE = {
     gourmet: { title: "Gourmet", id: 47 },
     workLife: { title: "Work Life", id: 48 },
     erotica: { title: "Erotica", id: 49 }
+}
+
+export const SEARCHOBJECT = {
+    searchQuery: '',
+    pageNo: '1',
+    orderBy: 'members',
+    sort: 'desc',
+    genre: '',
+    rating: ''
 }

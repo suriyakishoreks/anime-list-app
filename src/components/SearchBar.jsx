@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { updateSearch } from "./store/action";
+import { updateSearchFilter } from "./store/action";
 import {useHistory} from "react-router";
 import styles from "../styles/SearchBar.module.scss";
 import searchIcon from "../assets/search.svg";
 
 export default function SearchBar() {
   const history = useHistory();
-  const search = useSelector((state) => state.search);
-  const clearSearch = useSelector((state) => state.clearSearch);
+  const clearFilter = useSelector((state) => state.clearFilter);
   const dispatch = useDispatch();
-  const [searchValue, setSearchValue] = useState(search);
+  const [searchValue, setSearchValue] = useState('');
 
   useEffect(() => {
     const onChangeTimer = setTimeout(() => {
-      dispatch(updateSearch(searchValue));
+      dispatch(updateSearchFilter(searchValue));
       (searchValue.length > 2) && history.push(`/listing/search`);
     }, 400);
 
@@ -26,9 +25,9 @@ export default function SearchBar() {
 
   useEffect(() => {
     setSearchValue("");
-    dispatch(updateSearch(searchValue));
+    // dispatch(updateSearch(searchValue));
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[clearSearch]);
+  },[clearFilter]);
 
   function onChangeHandler(event) {
     setSearchValue(event.target.value);

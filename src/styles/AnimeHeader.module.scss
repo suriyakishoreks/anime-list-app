@@ -1,3 +1,5 @@
+@import 'variables';
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -8,16 +10,16 @@
 }
 .title {
     font-weight: 700;
-    font-size: 22px;
+    font-size: $minorHeadingFontSize;
 }
 .titleEnglish {
     font-weight: 500;
-    font-size: 16px;
+    font-size: $subHeadingFontSize;
     color: rgba(255, 255, 255, 0.7);
 }
 .infoSection {
     font-weight: 600;
-    font-size: 14px;
+    font-size: $mainContentFontSize;
     white-space: nowrap;
     text-align: end;
 }

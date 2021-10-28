@@ -1,8 +1,10 @@
+@import 'variables';
+
 .logo {
   padding-left: 30px;
   font-style: normal;
   font-weight: 600;
-  font-size: 30px;
+  font-size: $logoFontSize;
   color: rgba(0, 240, 255, 0.5);
   text-decoration: none;
   &:hover {

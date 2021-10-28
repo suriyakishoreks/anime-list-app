@@ -7,22 +7,26 @@ import rightArrowIcon from '../assets/right-arrow.png';
 
 import fetchAPI from './API/index';
 
-const divWidth = 0.7;
+const divWidth = 0.85;
 
 export default function PortraitCarousel({ endPoint}) {
 
+    const rowRef = useRef(null);
     const history = useHistory();
     const [showNav, setShowNav] = useState(false);
     const [anime, setAnime] = useState([]);
-    const [mainContentWidth, setMainContentWidth] = useState(divWidth * window.innerWidth);
-    const rowRef = useRef(null);
+    const [mainContentWidth, setMainContentWidth] = useState(rowRef.current?.offsetWidth);
     
     useEffect(() => {
         window.addEventListener("resize", updateWidth);
+        setMainContentWidth(rowRef.current?.offsetWidth);
+
         return () => window.removeEventListener("resize", updateWidth);
-    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[rowRef.current]);
+
     function updateWidth() {
-        setMainContentWidth(divWidth * window.innerWidth);
+        setMainContentWidth(rowRef.current?.offsetWidth);
     }
 
     useEffect(() => {
@@ -36,12 +40,12 @@ export default function PortraitCarousel({ endPoint}) {
     function scroll (direction) {
         if (direction === "left")
             rowRef.current.scroll({
-                left: rowRef.current.scrollLeft - (70/100)*mainContentWidth,
+                left: rowRef.current.scrollLeft - divWidth*mainContentWidth,
                 behavior: 'smooth'
               });
         else
             rowRef.current.scroll({
-                left: rowRef.current.scrollLeft + (70/100)*mainContentWidth,
+                left: rowRef.current.scrollLeft + divWidth*mainContentWidth,
                 behavior: 'smooth'
               });
     }

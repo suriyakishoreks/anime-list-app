@@ -1,3 +1,5 @@
+@import 'variables';
+
 .dropDown {
     position: relative;
     background-color: rgba(196, 196, 196, 0.4);
@@ -17,7 +19,7 @@
         color: white;
         padding: 5px 8px;
         font-weight: 600;
-        font-size: 13px;
+        font-size: $mainContentFontSize;
         overflow-y: scroll;
         &::-webkit-scrollbar {
             display: none;
@@ -25,7 +27,7 @@
         option {
             background: #8c8aad;
             font-weight: 500;
-            font-size: 14px;
+            font-size: $mainContentFontSize;
         }
         &:not(:-internal-list-box) {
             overflow: hidden;

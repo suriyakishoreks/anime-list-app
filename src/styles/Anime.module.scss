@@ -1,3 +1,5 @@
+@import 'variables';
+
 .anime {
     position: relative;
     background: rgba(196, 196, 196, 0.3);
@@ -31,12 +33,12 @@
 .synopsis {
     margin: 15px 0;
     text-align: justify;
-    font-size: 14px;
+    font-size: $mainContentFontSize;
     font-weight: 400;
 }
 .contentHeading {
     font-weight: 500;
-    font-size: 20px;
+    font-size: $minorHeadingFontSize;
     margin: 10px 0;
 }
 .contentCardOuter {
@@ -76,7 +78,7 @@
 
 .relatedItem {
     font-weight: 500;
-    font-size: 12px;
+    font-size: $subContentFontSize;
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     &:hover {
@@ -105,7 +107,7 @@
         right: 0px;
         padding: 2px 8px;
         font-weight: 800;
-        font-size: 18px;
+        font-size: $minorHeadingFontSize;
         background: rgba(2, 121, 134, 0.9);
         border-radius: 0px 15px;
     }

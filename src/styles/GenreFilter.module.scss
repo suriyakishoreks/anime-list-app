@@ -1,3 +1,5 @@
+@import 'variables';
+
 .genreFilter {
     background: rgba(196, 196, 196, 0.2);
     border-radius: 15px;
@@ -11,7 +13,7 @@
     text-align: center;
     h5 {
         font-weight: 600;
-        font-size: 16px;
+        font-size: $subHeadingFontSize;
         padding-right: 5px;
     }
 }

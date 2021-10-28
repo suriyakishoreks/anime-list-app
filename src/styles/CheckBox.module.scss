@@ -1,8 +1,10 @@
+@import 'variables';
+
 .container {
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 15px;
     font-weight: 600;
-    font-size: 13px;
+    font-size: $mainContentFontSize;
     padding: 2px 10px;
     flex-grow: 1;
     text-align: center;

@@ -3,7 +3,8 @@ import {
   UPDATE_RATINGFILTER,
   UPDATE_SEARCHFILTER,
   CLEAR_FILTER,
-  INITIALIZE_FILTER
+  INITIALIZE_FILTER,
+  SET_WINDOW_VIEW
 } from "../constants/index";
 
 export function clearFilter(payload) {
@@ -40,3 +41,11 @@ export function initializeFilter(payload) {
     payload
   }
 }
+
+export function setWindowView(payload) {
+  return {
+    type: SET_WINDOW_VIEW,
+    payload
+  }
+}
+

@@ -1,3 +1,5 @@
+@import 'variables';
+
 @keyframes fadein {
   0% {
     opacity: 0.2;
@@ -38,7 +40,7 @@
 .title {
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: $minorHeadingFontSize;
   text-decoration: none;
   padding: 10px 0;
   
@@ -47,14 +49,14 @@
 .synopsis {
   font-style: normal;
   font-weight: 500;
-  font-size: 12px;
+  font-size: $subContentFontSize;
   padding: 10px 0;
   text-align: justify;
 }
 
 .genre {
   font-weight: 400;
-  font-size: 12px;
+  font-size: $subContentFontSize;
   padding-top: 20px;
   img {
     height:10px;

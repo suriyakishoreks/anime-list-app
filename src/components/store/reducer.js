@@ -3,7 +3,9 @@ import {
   UPDATE_RATINGFILTER,
   UPDATE_SEARCHFILTER,
   CLEAR_FILTER,
-  INITIALIZE_FILTER
+  INITIALIZE_FILTER,
+  SET_WINDOW_VIEW,
+  getViewType
 } from "../constants/index";
 
 const defaultState = {
@@ -18,9 +20,7 @@ const defaultState = {
   },
   clearFilter: false,
   initializeFilter: false,
-  movie: null,
-  currentMovies: [],
-  movieList: []
+  windowViewType: getViewType(window.innerWidth)
 };
 
 function RUDUX_REDUCER(state = defaultState, action) {
@@ -49,6 +49,11 @@ function RUDUX_REDUCER(state = defaultState, action) {
       return {
         ...state,
         initializeFilter: action.payload
+      };
+    case SET_WINDOW_VIEW:
+      return {
+        ...state,
+        windowViewType: action.payload
       };
     default:
       return {

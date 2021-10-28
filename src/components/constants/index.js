@@ -4,6 +4,21 @@ export const UPDATE_RATINGFILTER = "UPDATE_RATING_FILTER";
 export const UPDATE_SEARCHFILTER = "UPDATE_SEARCH_FILTER";
 export const CLEAR_FILTER = "CLEAR_FILTER";
 export const INITIALIZE_FILTER = "INITIALIZE_FILTER";
+export const SET_WINDOW_VIEW = "SET_WINDOW_VIEW";
+
+// View Constants
+export const DESKTOP_VIEW = "DESKTOP_VIEW";
+export const INTERMEDIATE_VIEW = "INTERMEDIATE_VIEW";
+export const MOBILE_VIEW = "MOBILE_VIEW";
+
+export function getViewType (width) {
+    if (width > 1190)
+        return DESKTOP_VIEW;
+    else if (width > 740)
+        return INTERMEDIATE_VIEW;
+    else
+        return MOBILE_VIEW;
+}
 
 // App related Constants
 export const SEASONS = {

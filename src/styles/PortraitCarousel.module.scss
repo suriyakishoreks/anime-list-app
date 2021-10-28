@@ -1,3 +1,5 @@
+@import 'variables';
+
 .row {
     position: relative;
     color: white;
@@ -7,7 +9,7 @@
         margin-bottom: 5px;
         font-style: normal;
         font-weight: 600;
-        font-size: 24px;
+        font-size: $majorHeadingFontSize;
         color: rgba(255, 255, 255, 0.5);
     }
 }

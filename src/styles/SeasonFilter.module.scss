@@ -1,4 +1,4 @@
-@import 'variables';
+@use 'variables' as *;
 
 .seasonFilter {
     background: rgba(196, 196, 196, 0.2);
@@ -22,7 +22,7 @@
     align-items: center;
     h5 {
         font-weight: 500;
-        font-size: $subHeadingFontSize;
+        font-size: $D_subHeadingFontSize;
     }
 }
 .button {
@@ -31,7 +31,7 @@
     border-radius: 15px;
     padding: 8px 15px;
     font-weight: 600;
-    font-size: $subHeadingFontSize;
+    font-size: $D_subHeadingFontSize;
     color: #ffffff;
     &:hover {
         background: rgba(196, 196, 196, 0.4);

@@ -1,0 +1,13 @@
+@use 'variables' as *;
+
+@mixin IntermediateView {
+    @media only screen and (max-width:$intermediateView) {
+        @content;
+    }
+}
+
+@mixin MobileView {
+    @media only screen and (max-width:$mobileView) {
+        @content;
+    }
+}

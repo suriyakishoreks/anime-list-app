@@ -1,4 +1,4 @@
-@import 'variables';
+@use 'variables' as *;
 
 .animeCard {
     width: 100%;
@@ -20,20 +20,20 @@
 
 .heading {
     font-weight: 700;
-    font-size: $mainContentFontSize;
+    font-size: $D_mainContentFontSize;
 }
 .rating {
     font-weight: 500;
-    font-size: $subContentFontSize;
+    font-size: $D_subContentFontSize;
 }
 .score {
     font-weight: 700;
-    font-size: $minorHeadingFontSize;
+    font-size: $D_minorHeadingFontSize;
 }
 .details {
     margin: 5px 0;
     font-weight: 600;
-    font-size: $mainContentFontSize;
+    font-size: $D_mainContentFontSize;
 }
 
 .genre {
@@ -41,6 +41,6 @@
     border-radius: 15px;
     margin: 8px 0;
     font-weight: 600;
-    font-size: $subHeadingFontSize;
+    font-size: $D_subHeadingFontSize;
     padding: 2px 0;
 }

@@ -1,4 +1,4 @@
-@import 'variables';
+@use 'variables' as *;
 
 .header {
     display: flex;
@@ -10,16 +10,16 @@
 }
 .title {
     font-weight: 700;
-    font-size: $minorHeadingFontSize;
+    font-size: $D_minorHeadingFontSize;
 }
 .titleEnglish {
     font-weight: 500;
-    font-size: $subHeadingFontSize;
+    font-size: $D_subHeadingFontSize;
     color: rgba(255, 255, 255, 0.7);
 }
 .infoSection {
     font-weight: 600;
-    font-size: $mainContentFontSize;
+    font-size: $D_mainContentFontSize;
     white-space: nowrap;
     text-align: end;
 }

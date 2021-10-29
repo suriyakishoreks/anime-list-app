@@ -1,4 +1,4 @@
-@import 'variables';
+@use 'variables' as *;
 
 .scheduleFilter {
     padding: 10px 20px;
@@ -9,7 +9,7 @@
     height: 100px;
     h5 {
         font-weight: 600;
-        font-size: $subHeadingFontSize;
+        font-size: $D_subHeadingFontSize;
     }
 }
 .scheduleContainer {
@@ -21,7 +21,7 @@
 }
 .scheduleText {
     font-weight: 600;
-    font-size: $mainContentFontSize;
+    font-size: $D_mainContentFontSize;
     margin-bottom: 5px;
 }
 .scheduleButton {
@@ -32,7 +32,7 @@
     border-radius: 15px;
     padding: 3px 15px;
     font-weight: 600;
-    font-size: $mainContentFontSize;
+    font-size: $D_mainContentFontSize;
     color: #ffffff;
     &:hover {
         background: rgba(196, 196, 196, 0.4);

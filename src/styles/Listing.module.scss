@@ -1,11 +1,11 @@
-@import 'variables';
+@use 'variables' as *;
 
 .title {
     padding-left: 10px;
     margin-bottom: 5px;
     font-style: normal;
     font-weight: 600;
-    font-size: $majorHeadingFontSize;
+    font-size: $D_majorHeadingFontSize;
     color: rgba(255, 255, 255, 0.5);
 }
 .listing {

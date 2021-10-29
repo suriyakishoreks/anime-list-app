@@ -1,13 +1,20 @@
-@import 'variables';
+@use "variables" as *;
+@use "mixins" as *;
 
 .logo {
   padding-left: 30px;
   font-style: normal;
   font-weight: 600;
-  font-size: $logoFontSize;
+  font-size: $D_logoFontSize;
   color: rgba(0, 240, 255, 0.5);
   text-decoration: none;
   &:hover {
     color: rgba(0, 240, 255, 0.7);
+  }
+}
+
+@include IntermediateView {
+  .logo {
+    font-size: $I_logoFontSize;
   }
 }

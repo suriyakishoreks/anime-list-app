@@ -112,7 +112,7 @@ export const GENRE = {
 export const SEARCHOBJECT = {
     searchQuery: '',
     pageNo: '1',
-    orderBy: 'members',
+    orderBy: '',
     sort: 'desc',
     genre: '',
     rating: ''

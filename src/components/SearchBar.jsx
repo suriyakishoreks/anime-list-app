@@ -16,7 +16,7 @@ export default function SearchBar() {
   useEffect(() => {
     const onChangeTimer = setTimeout(() => {
       dispatch(updateSearchFilter(searchValue));
-      (searchValue.length > 2 || genre.value || rating.value) && 
+      if (searchValue) 
         history.push(`/listing/search?q=${searchValue}&genre=${genre.value}&rating=${rating.value}`);
     }, 400);
 

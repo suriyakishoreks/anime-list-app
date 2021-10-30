@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 .header {
     display: flex;
@@ -22,4 +23,12 @@
     font-size: $D_mainContentFontSize;
     white-space: nowrap;
     text-align: end;
+}
+@include MobileView {
+    .title {
+        font-size: $M_majorHeadingFontSize;
+    }
+    .titleEnglish {
+        font-size: $M_minorHeadingFontSize;
+    }
 }

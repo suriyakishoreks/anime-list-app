@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 .anime {
     position: relative;
@@ -110,5 +111,53 @@
         font-size: $D_minorHeadingFontSize;
         background: rgba(2, 121, 134, 0.9);
         border-radius: 0px 15px;
+    }
+}
+
+@include TabletView {
+    .anime {
+        flex-direction: column;
+        margin:0px 10px 15px 20px;
+    }
+    .leftContainer {
+        flex-direction: row;
+        gap: 10px;
+    }
+    .poster {
+        width: 50%;
+    }
+    .contentCardInner {
+        padding: 0px;
+    }
+}
+@include MobileView {
+    .anime {
+        flex-direction: column;
+        margin:0px 0px 10px 10px;
+    }
+    .leftContainer {
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        gap: 5px;
+    }
+    .poster {
+        width: 70%;
+    }
+    .contentCardInner {
+        padding: 0px;
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+    }
+    .rightContainer {
+        margin: 5px;
+    }
+    .recommendationsPoster {
+        height: 170px;
+        width: 120px;
+    }
+    .synopsis {
+        font-size: $M_mainContentFontSize;
     }
 }

@@ -28,7 +28,7 @@ export default function SearchBar() {
 
   useEffect(() => {
     setSearchValue("");
-    // dispatch(updateSearch(searchValue));
+    dispatch(updateSearchFilter(""));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[clearFilter]);
 

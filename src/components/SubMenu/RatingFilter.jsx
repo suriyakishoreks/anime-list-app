@@ -19,6 +19,11 @@ export default function RatingFilter() {
 
     useEffect(() => {
         setSelectedRating(new Set());
+        dispatch(updateRatingFilter({
+            filterSet: new Set(),
+            value: ''
+        }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [clearFilter]);
 
     function onClickHandler(id) {

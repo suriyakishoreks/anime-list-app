@@ -18,16 +18,22 @@ export default function GenreFilter() {
 
     useEffect(() => {
         setSelectedFilter(new Set());
+        dispatch(updateGenreFilter({
+            filterSet: new Set(),
+            value: ''
+        }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [clearFilter]);
 
     function onClickHandler(id) {
         const newSet = new Set([...selectedFilter]);
-        if (newSet.size === 4)
-            return;
-        else if (newSet.has(id)) {
+        
+        if (newSet.has(id)) {
             newSet.delete(id);
             setSelectedFilter(newSet);
         }
+        else if (newSet.size === 4)
+            return;
         else {
             newSet.add(id);
             setSelectedFilter(newSet);

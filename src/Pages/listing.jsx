@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { useParams, useHistory, useLocation } from 'react-router-dom';
-
+import { useSelector } from "react-redux";
 import { endPoints } from "../components/API/endpoints";
 
 import { DAYS, SEASONS, getYearList, SEARCHOBJECT } from '../components/constants/index';
@@ -13,11 +13,12 @@ export default function Listing() {
 
     const history = useHistory();
     const location = useLocation();
+    const search = useSelector((state) => state.searchFilter);
+    
     const { id } = useParams();
     const [API, setAPI] = useState(null);
     const [anime, setAnime] = useState([]);
     const [title, setTitle] = useState("Results");
-
 
     useEffect(() => {
         let controller = new AbortController();
@@ -29,6 +30,14 @@ export default function Listing() {
         API && fetchData(API);
         return () => controller?.abort();
     }, [API]);
+
+    useEffect(() => {
+        const query = new URLSearchParams(location.search);
+        if (id === 'search' && ((search.length <= 2) || (query.get("q").length <= 2)) 
+            && !query.get("rating") && !query.get("genre"))
+                history.push(`/`);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [id, search, location]);
 
     useEffect(() => {
         const query = new URLSearchParams(location.search);
@@ -50,9 +59,6 @@ export default function Listing() {
             sObj.searchQuery = query.get("q").length > 2 ? query.get("q") : '';
             sObj.rating = query.get("rating");
             sObj.genre = query.get("genre");
-            if (!(sObj.genre || sObj.rating || sObj.searchQuery)) {
-                history.push(`/`);
-            }
             const endPoint = endPoints.search(sObj);
             setAPI(endPoint);
             setTitle(endPoint.id);

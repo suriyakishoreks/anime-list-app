@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/anime-list-app/static/css/main.4187b7bd.chunk.css",
-    "main.js": "/anime-list-app/static/js/main.f45e7ef9.chunk.js",
-    "main.js.map": "/anime-list-app/static/js/main.f45e7ef9.chunk.js.map",
+    "main.css": "/anime-list-app/static/css/main.2388df6a.chunk.css",
+    "main.js": "/anime-list-app/static/js/main.3004b129.chunk.js",
+    "main.js.map": "/anime-list-app/static/js/main.3004b129.chunk.js.map",
     "runtime-main.js": "/anime-list-app/static/js/runtime-main.ce748633.js",
     "runtime-main.js.map": "/anime-list-app/static/js/runtime-main.ce748633.js.map",
     "static/js/2.31390266.chunk.js": "/anime-list-app/static/js/2.31390266.chunk.js",
     "static/js/2.31390266.chunk.js.map": "/anime-list-app/static/js/2.31390266.chunk.js.map",
     "index.html": "/anime-list-app/index.html",
-    "static/css/main.4187b7bd.chunk.css.map": "/anime-list-app/static/css/main.4187b7bd.chunk.css.map",
+    "static/css/main.2388df6a.chunk.css.map": "/anime-list-app/static/css/main.2388df6a.chunk.css.map",
     "static/js/2.31390266.chunk.js.LICENSE.txt": "/anime-list-app/static/js/2.31390266.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/anime-list-app/static/media/background.22716022.png",
     "static/media/close.59f3bebe.svg": "/anime-list-app/static/media/close.59f3bebe.svg",
@@ -20,7 +20,7 @@
   "entrypoints": [
     "static/js/runtime-main.ce748633.js",
     "static/js/2.31390266.chunk.js",
-    "static/css/main.4187b7bd.chunk.css",
-    "static/js/main.f45e7ef9.chunk.js"
+    "static/css/main.2388df6a.chunk.css",
+    "static/js/main.3004b129.chunk.js"
   ]
 }

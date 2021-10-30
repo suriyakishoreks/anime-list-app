@@ -1,27 +1,49 @@
+@use 'mixins' as *;
+
 .mainSection {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 70vw;
+  width: calc(100vw - 400px);
 }
 .subMenu {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  width: 30vw;
+  max-height: 920px;
+  width: 400px;
 }
 .header {
   align-items: center;
   display: flex;
   flex-direction: row;
-  height: 15vh;
+  height: 90px;
   justify-content: space-between;
   width: 100%;
 }
 .mainContent {
+  padding-right: 10px;
   display: flex;
   flex-direction: column;
-  height: 85vh;
+  height: calc(100% - 90px);
   width: 100%;
+}
+
+@include IntermediateView {
+  .mainSection {
+    width: 100vw;
+  }
+  .subMenu {
+    display: none;
+  }
+}
+
+@include MobileView {
+  .mainSection {
+    width: 100vw;
+  }
+  .subMenu {
+    display: none;
+  }
 }

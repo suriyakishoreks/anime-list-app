@@ -12,9 +12,9 @@ export const INTERMEDIATE_VIEW = "INTERMEDIATE_VIEW";
 export const MOBILE_VIEW = "MOBILE_VIEW";
 
 export function getViewType (width) {
-    if (width > 1190)
+    if (width > 1180.0)
         return DESKTOP_VIEW;
-    else if (width > 740)
+    else if (width > 740.0)
         return INTERMEDIATE_VIEW;
     else
         return MOBILE_VIEW;
@@ -55,7 +55,7 @@ export const RATING = {
     pg13: { title: "Thirteen  +", id: "pg13" },
     r17: { title: "Seventeen +", id: "r17" },
     r: { title: "R +", id: "r" },
-    rx: { title: "RX", id: "rx" },
+    // rx: { title: "RX", id: "rx" },
 }
 
 export const GENRE = {
@@ -70,7 +70,7 @@ export const GENRE = {
     ecchi: { title: "Ecchi", id: 9 },
     fantasy: { title: "Fantasy", id: 10 },
     game: { title: "Game", id: 11 },
-    hentai: { title: "Hentai", id: 12 },
+    // hentai: { title: "Hentai", id: 12 },
     historical: { title: "Historical", id: 13 },
     horror: { title: "Horror", id: 14 },
     kids: { title: "Kids", id: 15 },
@@ -83,9 +83,9 @@ export const GENRE = {
     school: { title: "School", id: 23 },
     sciFi: { title: "Sci Fi", id: 24 },
     shoujo: { title: "Shoujo", id: 25 },
-    girlsLove: { title: "Girls Love", id: 26 },
+    // girlsLove: { title: "Girls Love", id: 26 },
     shonen: { title: "Shounen", id: 27 },
-    boysLove: { title: "Boys Love", id: 28 },
+    // boysLove: { title: "Boys Love", id: 28 },
     space: { title: "Space", id: 29 },
     sports: { title: "Sports", id: 30 },
     superPower: { title: "Super Power", id: 31 },
@@ -102,7 +102,7 @@ export const GENRE = {
     awardWinning: { title: "Award Winning", id: 46 },
     gourmet: { title: "Gourmet", id: 47 },
     workLife: { title: "Work Life", id: 48 },
-    erotica: { title: "Erotica", id: 49 }
+    // erotica: { title: "Erotica", id: 49 }
 }
 
 export const SEARCHOBJECT = {

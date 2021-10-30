@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 .searchBar {
   margin-right: 50px; 
@@ -35,5 +36,11 @@
   }
   &:focus {
     outline: none;
+  }
+}
+
+@include MobileView {
+  .searchBar {
+    display: none;
   }
 }

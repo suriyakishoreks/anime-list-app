@@ -13,6 +13,10 @@
   }
 }
 
+.section {
+  display: flex;
+}
+
 @include IntermediateView {
   .logo {
     font-size: $I_logoFontSize;

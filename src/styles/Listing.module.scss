@@ -2,7 +2,7 @@
 
 .title {
     padding-left: 10px;
-    margin-bottom: 5px;
+    margin: 0px 0px 5px 10px;
     font-style: normal;
     font-weight: 600;
     font-size: $D_majorHeadingFontSize;
@@ -12,7 +12,7 @@
     background: rgba(196, 196, 196, 0.3);
     border-radius: 15px;
     padding: 10px;
-    margin: 15px 0;
+    margin: 15px 20px;
     display: flex;
     flex-wrap: wrap;
     overflow-y: scroll;

@@ -27,8 +27,14 @@ export default function Listing() {
             setAnime(data[endPoint.path] ? data[endPoint.path] : []);
             controller = null;
         }
-        API && fetchData(API);
-        return () => controller?.abort();
+        // Timer due to API limitation (only 2 requests per second allowed)
+        const timeout = setTimeout(() => {
+            API && fetchData(API);
+        }, 500);
+        return () => {
+            controller?.abort();
+            clearTimeout(timeout);
+        };
     }, [API]);
 
     useEffect(() => {

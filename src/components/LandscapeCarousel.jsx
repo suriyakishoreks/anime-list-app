@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
+import { useSelector } from 'react-redux';
+import { MOBILE_VIEW } from './constants/index';
 import styles from '../styles/LandscapeCarousel.module.scss';
 import tagIcon from '../assets/tag.svg';
 import leftArrowIcon from '../assets/left-arrow.png';
@@ -8,6 +10,7 @@ import fetchAPI from './API/index';
 
 export default function LandscapeCarousel({ endPoint }) {
 
+    const windowViewType = useSelector((state) => state.windowViewType);
     const history = useHistory();
     const [showNav, setShowNav] = useState(false);
     const [anime, setAnime] = useState([]);
@@ -47,7 +50,7 @@ export default function LandscapeCarousel({ endPoint }) {
         });
     }
 
-    function onClickHandler(id){
+    function onClickHandler(id) {
         history.push(`/anime/${id}`);
     }
 
@@ -60,17 +63,19 @@ export default function LandscapeCarousel({ endPoint }) {
                 <img className={styles.arrow} src={leftArrowIcon} alt="Left Arrow" /></button>}
 
             <img className={styles.poster} src={anime[currentIndex].image_url} alt="test" />
-            <div className={styles.textContent} onClick={() => { onClickHandler(anime[currentIndex].mal_id)}}>
+            <div className={styles.textContent} onClick={() => { onClickHandler(anime[currentIndex].mal_id) }}>
                 <h3 className={styles.title}>{anime[currentIndex].title}</h3>
                 <p className={styles.synopsis}>
-                    {anime[currentIndex].synopsis.length > 350 ? `${anime[currentIndex].synopsis.slice(0, 350)}...` : anime[currentIndex].synopsis}
+                    {anime[currentIndex].synopsis.length > (windowViewType === MOBILE_VIEW ? 200 : 350) ?
+                        `${anime[currentIndex].synopsis.slice(0, (windowViewType === MOBILE_VIEW ? 200 : 350))}...` :
+                        anime[currentIndex].synopsis}
                 </p>
                 <p className={styles.genre}>
                     <img src={tagIcon} alt="tag" /> &nbsp;
-                    {anime[currentIndex].genres.map((ele, index)=>{
+                    {anime[currentIndex].genres.map((ele, index) => {
                         return <span key={index}>{`${ele.name}, `}</span>;
                     })}
-                    {anime[currentIndex].explicit_genres.map((ele, index)=>{
+                    {anime[currentIndex].explicit_genres.map((ele, index) => {
                         return <span key={index}>{`${ele.name}, `}</span>;
                     })}
                     Anime

@@ -39,7 +39,7 @@
   }
 }
 
-@include MobileView {
+@include TabletView {
   .searchBar {
     display: none;
   }

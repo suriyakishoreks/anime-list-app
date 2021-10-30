@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-
+import { useHistory } from "react-router";
 import { updateGenreFilter } from '../store/action';
 
 import CheckBox from '../CheckBox';
@@ -9,6 +9,9 @@ import styles from '../../styles/GenreFilter.module.scss';
 
 export default function GenreFilter() {
 
+    const history = useHistory();
+    const search = useSelector((state) => state.searchFilter);
+    const rating = useSelector((state) => state.ratingFilter);
     const clearFilter = useSelector((state) => state.clearFilter);
     const dispatch = useDispatch();
     const [selectedFilter, setSelectedFilter] = useState(new Set());
@@ -37,6 +40,7 @@ export default function GenreFilter() {
             filterSet: newSet,
             value: genreFilter
         }));
+        history.push(`/listing/search?q=${search}&genre=${genreFilter}&rating=${rating.value}`);
     }
 
     return (

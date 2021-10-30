@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-
+import { useHistory } from "react-router";
 import CheckBox from '../CheckBox';
 import { RATING } from '../constants/index';
 
@@ -10,6 +10,9 @@ import styles from '../../styles/RatingFilter.module.scss';
 
 export default function RatingFilter() {
 
+    const history = useHistory();
+    const search = useSelector((state) => state.searchFilter);
+    const genre = useSelector((state) => state.genreFilter);
     const clearFilter = useSelector((state) => state.clearFilter);
     const dispatch = useDispatch();
     const [selectedRating, setSelectedRating] = useState(new Set());
@@ -35,6 +38,7 @@ export default function RatingFilter() {
             filterSet: newSet,
             value: ratingFilter
         }));
+        history.push(`/listing/search?q=${search}&genre=${genre.value}&rating=${ratingFilter}`);
     }
 
     return (

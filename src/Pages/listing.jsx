@@ -1,8 +1,9 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { useParams, useHistory, useLocation } from 'react-router-dom';
+
 import { endPoints } from "../components/API/endpoints";
 
-import {DAYS, SEASONS, getYearList, SEARCHOBJECT} from '../components/constants/index';
+import { DAYS, SEASONS, getYearList, SEARCHOBJECT } from '../components/constants/index';
 
 import styles from '../styles/Listing.module.scss';
 
@@ -27,8 +28,8 @@ export default function Listing() {
         }
         API && fetchData(API);
         return () => controller?.abort();
-    },[API]);
-    
+    }, [API]);
+
     useEffect(() => {
         const query = new URLSearchParams(location.search);
         if (id === "season") {
@@ -46,13 +47,17 @@ export default function Listing() {
             setTitle(endPoint.id);
         } else if (id === "search") {
             const sObj = SEARCHOBJECT;
-            sObj.searchQuery = query.get("q");
+            sObj.searchQuery = query.get("q").length > 2 ? query.get("q") : '';
             sObj.rating = query.get("rating");
             sObj.genre = query.get("genre");
+            if (!(sObj.genre || sObj.rating || sObj.searchQuery)) {
+                history.push(`/`);
+            }
             const endPoint = endPoints.search(sObj);
             setAPI(endPoint);
             setTitle(endPoint.id);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [id, location]);
 
     function onClickHandler(id) {

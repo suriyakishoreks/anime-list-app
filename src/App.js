@@ -23,9 +23,9 @@ export default function App() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // useEffect(() => {
-  //   console.log(windowViewType, window.innerWidth);
-  // }, [windowViewType]);
+  useEffect(() => {
+    console.log(windowViewType, window.innerWidth);
+  }, [windowViewType]);
 
   function updateWidth() {
     dispatch(setWindowView(getViewType(window.innerWidth)));

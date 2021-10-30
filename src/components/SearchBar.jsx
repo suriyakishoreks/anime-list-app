@@ -8,13 +8,16 @@ import searchIcon from "../assets/search.svg";
 export default function SearchBar() {
   const history = useHistory();
   const clearFilter = useSelector((state) => state.clearFilter);
+  const genre = useSelector((state) => state.genreFilter);
+  const rating = useSelector((state) => state.ratingFilter);
   const dispatch = useDispatch();
   const [searchValue, setSearchValue] = useState('');
 
   useEffect(() => {
     const onChangeTimer = setTimeout(() => {
       dispatch(updateSearchFilter(searchValue));
-      (searchValue.length > 2) && history.push(`/listing/search`);
+      (searchValue.length > 2 || genre.value || rating.value) && 
+        history.push(`/listing/search?q=${searchValue}&genre=${genre.value}&rating=${rating.value}`);
     }, 400);
 
     return () => {

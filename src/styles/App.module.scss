@@ -39,11 +39,8 @@
   }
 }
 
-@include MobileView {
-  .mainSection {
-    width: 100vw;
-  }
-  .subMenu {
-    display: none;
+@include TabletView {
+  .header {
+    height: 70px; 
   }
 }

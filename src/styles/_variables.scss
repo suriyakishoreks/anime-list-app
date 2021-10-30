@@ -1,6 +1,7 @@
 // Break Points
 $intermediateView: 1180px;
-$mobileView: 740px;
+$tabletView: 740px;
+$mobileView: 460px;
 
 // Font Size Desktop View
 $D_logoFontSize: 30px;
@@ -11,15 +12,11 @@ $D_mainContentFontSize: 14px;
 $D_subContentFontSize: 12px;
 // Font Size Intermediate View
 $I_logoFontSize: 26px;
-$I_majorHeadingFontSize: 24px;
-$I_minorHeadingFontSize: 20px;
-$I_subHeadingFontSize: 16px;
-$I_mainContentFontSize: 14px;
-$I_subContentFontSize: 12px;
+// Font Size Tablet View
+$T_logoFontSize: 24px;
+$T_majorHeadingFontSize: 20px;
+$T_minorHeadingFontSize: 18px;
+$T_subContentFontSize: 10px;
 // Font Size Mobile View
-$M_logoFontSize: 30px;
-$M_majorHeadingFontSize: 24px;
-$M_minorHeadingFontSize: 20px;
-$M_subHeadingFontSize: 16px;
-$M_mainContentFontSize: 14px;
-$M_subContentFontSize: 12px;
+$M_minorHeadingFontSize: 14px;
+$M_subContentFontSize: 10px;

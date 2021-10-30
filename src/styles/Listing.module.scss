@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 .title {
     padding-left: 10px;
@@ -36,5 +37,16 @@
     &:hover {
         cursor: pointer;
         transform: scale(1.1);
+    }
+}
+
+@include TabletView {
+    .title {
+
+            font-size: $T_majorHeadingFontSize;
+    
+    }
+    .listing {
+        margin: 5px 10px;
     }
 }

@@ -5,6 +5,7 @@ import {
   CLEAR_FILTER,
   INITIALIZE_FILTER,
   SET_WINDOW_VIEW,
+  SET_MENU_STATUS,
   getViewType
 } from "../constants/index";
 
@@ -20,7 +21,8 @@ const defaultState = {
   },
   clearFilter: false,
   initializeFilter: false,
-  windowViewType: getViewType(window.innerWidth)
+  windowViewType: getViewType(window.innerWidth), 
+  isMenuOpen: false
 };
 
 function RUDUX_REDUCER(state = defaultState, action) {
@@ -54,6 +56,11 @@ function RUDUX_REDUCER(state = defaultState, action) {
       return {
         ...state,
         windowViewType: action.payload
+      };
+    case SET_MENU_STATUS:
+      return {
+        ...state,
+        isMenuOpen: action.payload
       };
     default:
       return {

@@ -5,10 +5,12 @@ export const UPDATE_SEARCHFILTER = "UPDATE_SEARCH_FILTER";
 export const CLEAR_FILTER = "CLEAR_FILTER";
 export const INITIALIZE_FILTER = "INITIALIZE_FILTER";
 export const SET_WINDOW_VIEW = "SET_WINDOW_VIEW";
+export const SET_MENU_STATUS = "SET_MENU_STATUS";
 
 // View Constants
 export const DESKTOP_VIEW = "DESKTOP_VIEW";
 export const INTERMEDIATE_VIEW = "INTERMEDIATE_VIEW";
+export const TABLET_VIEW = "TABLET_VIEW";
 export const MOBILE_VIEW = "MOBILE_VIEW";
 
 export function getViewType (width) {
@@ -16,6 +18,8 @@ export function getViewType (width) {
         return DESKTOP_VIEW;
     else if (width > 740.0)
         return INTERMEDIATE_VIEW;
+    else if (width > 460.0)
+        return TABLET_VIEW;
     else
         return MOBILE_VIEW;
 }

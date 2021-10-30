@@ -6,6 +6,11 @@
     }
 }
 
+@mixin TabletView {
+    @media (max-width:$tabletView) {
+        @content;
+    }
+}
 @mixin MobileView {
     @media (max-width:$mobileView) {
         @content;

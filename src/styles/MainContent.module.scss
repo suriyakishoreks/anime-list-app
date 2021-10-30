@@ -1,3 +1,5 @@
+@use 'mixins' as *;
+
 .mainContent {
   overflow-y: scroll;
 
@@ -13,5 +15,13 @@
   }
   &::-webkit-scrollbar-thumb:hover {
     background: rgb(196, 196, 196);
+  }
+}
+
+@include TabletView {
+  .mainContent {
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }

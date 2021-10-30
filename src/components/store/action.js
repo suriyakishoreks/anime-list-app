@@ -4,7 +4,8 @@ import {
   UPDATE_SEARCHFILTER,
   CLEAR_FILTER,
   INITIALIZE_FILTER,
-  SET_WINDOW_VIEW
+  SET_WINDOW_VIEW,
+  SET_MENU_STATUS
 } from "../constants/index";
 
 export function clearFilter(payload) {
@@ -45,6 +46,13 @@ export function initializeFilter(payload) {
 export function setWindowView(payload) {
   return {
     type: SET_WINDOW_VIEW,
+    payload
+  }
+}
+
+export function setMenuStatus(payload) {
+  return {
+    type: SET_MENU_STATUS,
     payload
   }
 }

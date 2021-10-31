@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import SearchBar from "./SearchBar";
@@ -12,6 +12,7 @@ import styles from '../styles/Header.module.scss';
 export default function Header() {
 
   const dispatch = useDispatch();
+  const [showLogo, setShowLogo] = useState(true);
   const windowViewType = useSelector((state) => state.windowViewType);
   const isMenuOpen = useSelector((state) => state.isMenuOpen);
 
@@ -21,10 +22,10 @@ export default function Header() {
 
   return (
     <Fragment>
-      {/* <h1 className={styles.logo}>Anime List</h1> */}
-      <Link className={styles.logo} to="/">Anime List</Link>
+      <Link className={styles.logo} to="/">
+         {showLogo && 'Anime List'} </Link>
       <div className={styles.section}>
-        <SearchBar />
+        <SearchBar setShowLogo={setShowLogo} />
         {(windowViewType !== DESKTOP_VIEW) &&
           (isMenuOpen ?
             <img className={styles.menuIcon} onClick={() => { menuHandler(false) }} src={menuCloseIcon} alt='menuClose' />

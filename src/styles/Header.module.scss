@@ -8,6 +8,7 @@
   font-size: $D_logoFontSize;
   color: rgba(0, 240, 255, 0.5);
   text-decoration: none;
+  white-space: nowrap;
   &:hover {
     color: rgba(0, 240, 255, 0.7);
   }

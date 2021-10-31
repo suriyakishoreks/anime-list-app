@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 .ratingFilter {
     background: rgba(196, 196, 196, 0.2);
@@ -21,4 +22,11 @@
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 10px 10px;
+}
+
+@include IntermediateView {
+    .ratingFilter {     
+        height: auto; 
+        overflow: visible; 
+    }
 }

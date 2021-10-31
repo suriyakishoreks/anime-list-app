@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 .seasonFilter {
     background: rgba(196, 196, 196, 0.2);
@@ -38,3 +39,8 @@
     }
 }
 
+@include IntermediateView {
+    .seasonFilter {     
+        height: auto;  
+    }
+}

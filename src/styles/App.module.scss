@@ -1,4 +1,4 @@
-@use 'mixins' as *;
+@use "mixins" as *;
 
 .mainSection {
   display: flex;
@@ -35,15 +35,29 @@
     width: 100vw;
   }
   .subMenu {
-    display: none;
+    position: absolute;
+    height: calc(100% - 80px);
+    bottom: 0px;
+    right: 0px;
+    background-attachment: fixed;
+    background-image: url(../assets/background.png);
+    background-position: center top;
+    background-size: cover;
+    width: 100%;
+    max-width: 400px;
+    z-index: 15;
+    // display: none;
   }
 }
 
 @include TabletView {
   .header {
-    height: 70px; 
+    height: 70px;
+  }
+  .subMenu {
+    height: calc(100% - 60px);
   }
   .mainContent {
-    height: calc(100% - 70px);   
+    height: calc(100% - 70px);
   }
 }

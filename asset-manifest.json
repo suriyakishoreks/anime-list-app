@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/anime-list-app/static/css/main.2388df6a.chunk.css",
-    "main.js": "/anime-list-app/static/js/main.3004b129.chunk.js",
-    "main.js.map": "/anime-list-app/static/js/main.3004b129.chunk.js.map",
+    "main.css": "/anime-list-app/static/css/main.d60d7f30.chunk.css",
+    "main.js": "/anime-list-app/static/js/main.4d35dd6e.chunk.js",
+    "main.js.map": "/anime-list-app/static/js/main.4d35dd6e.chunk.js.map",
     "runtime-main.js": "/anime-list-app/static/js/runtime-main.ce748633.js",
     "runtime-main.js.map": "/anime-list-app/static/js/runtime-main.ce748633.js.map",
-    "static/js/2.31390266.chunk.js": "/anime-list-app/static/js/2.31390266.chunk.js",
-    "static/js/2.31390266.chunk.js.map": "/anime-list-app/static/js/2.31390266.chunk.js.map",
+    "static/js/2.7206829b.chunk.js": "/anime-list-app/static/js/2.7206829b.chunk.js",
+    "static/js/2.7206829b.chunk.js.map": "/anime-list-app/static/js/2.7206829b.chunk.js.map",
     "index.html": "/anime-list-app/index.html",
-    "static/css/main.2388df6a.chunk.css.map": "/anime-list-app/static/css/main.2388df6a.chunk.css.map",
-    "static/js/2.31390266.chunk.js.LICENSE.txt": "/anime-list-app/static/js/2.31390266.chunk.js.LICENSE.txt",
+    "static/css/main.d60d7f30.chunk.css.map": "/anime-list-app/static/css/main.d60d7f30.chunk.css.map",
+    "static/js/2.7206829b.chunk.js.LICENSE.txt": "/anime-list-app/static/js/2.7206829b.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/anime-list-app/static/media/background.22716022.png",
     "static/media/close.59f3bebe.svg": "/anime-list-app/static/media/close.59f3bebe.svg",
     "static/media/DropDown.module.scss": "/anime-list-app/static/media/dropDown.ec0fa1b7.svg",
@@ -19,8 +19,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.ce748633.js",
-    "static/js/2.31390266.chunk.js",
-    "static/css/main.2388df6a.chunk.css",
-    "static/js/main.3004b129.chunk.js"
+    "static/js/2.7206829b.chunk.js",
+    "static/css/main.d60d7f30.chunk.css",
+    "static/js/main.4d35dd6e.chunk.js"
   ]
 }

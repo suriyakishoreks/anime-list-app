@@ -3,7 +3,7 @@ import DropDown from '../DropDown';
 
 import {useHistory} from "react-router";
 
-import {getYearList, SEASONS} from '../constants/index';
+import {getYearList, SEASONS} from '../../constants/index';
 import styles from '../../styles/SeasonFilter.module.scss';
 
 export default function SeasonFilter() {

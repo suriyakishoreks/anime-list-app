@@ -5,7 +5,7 @@ import classes from '../styles/PortraitCarousel.module.scss';
 import leftArrowIcon from '../assets/left-arrow.png';
 import rightArrowIcon from '../assets/right-arrow.png';
 
-import fetchAPI from './API/index';
+import fetchAPI from '../API/index';
 
 const divWidth = 0.85;
 

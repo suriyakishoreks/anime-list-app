@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import SearchBar from "./SearchBar";
 
-import { setMenuStatus } from './store/action';
-import { DESKTOP_VIEW } from './constants/index';
+import { setMenuStatus } from '../store/action';
+import { DESKTOP_VIEW } from '../constants/index';
 import menuOpenIcon from '../assets/menu.svg';
 import menuCloseIcon from '../assets/close.svg';
 import styles from '../styles/Header.module.scss';

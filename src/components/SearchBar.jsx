@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { updateSearchFilter } from "./store/action";
+import { updateSearchFilter } from "../store/action";
 import { useHistory } from "react-router";
-import { TABLET_VIEW, MOBILE_VIEW } from './constants/index';
+import { TABLET_VIEW, MOBILE_VIEW } from '../constants/index';
 import styles from "../styles/SearchBar.module.scss";
 import searchIcon from "../assets/search.svg";
 

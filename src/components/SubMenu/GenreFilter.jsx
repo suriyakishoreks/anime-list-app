@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router";
-import { updateGenreFilter } from '../store/action';
+import { updateGenreFilter } from '../../store/action';
 
 import CheckBox from '../CheckBox';
-import { GENRE } from '../constants';
+import { GENRE } from '../../constants';
 import styles from '../../styles/GenreFilter.module.scss';
 
 export default function GenreFilter() {

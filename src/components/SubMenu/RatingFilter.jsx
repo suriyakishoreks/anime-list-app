@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import CheckBox from '../CheckBox';
-import { RATING } from '../constants/index';
+import { RATING } from '../../constants/index';
 
-import { updateRatingFilter } from '../store/action';
+import { updateRatingFilter } from '../../store/action';
 
 import styles from '../../styles/RatingFilter.module.scss';
 

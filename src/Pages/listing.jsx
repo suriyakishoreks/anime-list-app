@@ -1,12 +1,12 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { useParams, useHistory, useLocation } from 'react-router-dom';
-import { endPoints } from "../components/API/endpoints";
+import { endPoints } from "../API/endpoints";
 
-import { DAYS, SEASONS, getYearList, SEARCHOBJECT } from '../components/constants/index';
+import { DAYS, SEASONS, getYearList, SEARCHOBJECT } from '../constants/index';
 
 import styles from '../styles/Listing.module.scss';
 
-import fetchAPI from '../components/API/index';
+import fetchAPI from '../API/index';
 
 export default function Listing() {
 

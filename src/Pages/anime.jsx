@@ -1,8 +1,8 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router';
 import { Link } from "react-router-dom";
-import { endPoints } from '../components/API/endpoints';
-import fetchAPI from '../components/API/index';
+import { endPoints } from '../API/endpoints';
+import fetchAPI from '../API/index';
 
 import AnimeCard from '../components/AnimeCard';
 import AnimeHeader from '../components/AnimeHeader';

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {useHistory} from "react-router";
 
 import DropDown from '../DropDown';
-import { DAYS } from '../constants';
+import { DAYS } from '../../constants';
 
 import styles from '../../styles/ScheduleFilter.module.scss';
 

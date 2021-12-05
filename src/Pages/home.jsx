@@ -1,9 +1,9 @@
 import React, { Fragment, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { clearFilter } from "../components/store/action";
+import { clearFilter } from "../store/action";
 import PortraitCarousel from "../components/PortraitCarousel";
 import LandscapeCarousel from "../components/LandscapeCarousel";
-import { endPoints } from "../components/API/endpoints";
+import { endPoints } from "../API/endpoints";
 
 export default function Home() {
 

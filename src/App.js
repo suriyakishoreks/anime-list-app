@@ -2,8 +2,8 @@ import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 
-import { setWindowView } from './components/store/action';
-import { getViewType, DESKTOP_VIEW } from './components/constants/index';
+import { setWindowView } from './store/action';
+import { getViewType, DESKTOP_VIEW } from './constants/index';
 
 import Header from './components/Header';
 import MainContent from "./Pages/MainContent";

@@ -31,7 +31,7 @@ export default function Anime({ setVerticalScroll }) {
     }, [anime]);
 
     return (
-        <div className={styles.anime}>
+        Object.keys(anime).length ? <div className={styles.anime}>
             <div className={styles.leftContainer}>
                 <img className={styles.poster} src={anime.image_url} alt="Poster" />
                 <AnimeCard anime={anime} />
@@ -42,7 +42,7 @@ export default function Anime({ setVerticalScroll }) {
                 <Related anime={anime} />
                 <Recommendations recommendations={recommendations} />
             </div>
-        </div>
+        </div> : null
     );
 }
 

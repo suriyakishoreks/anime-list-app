@@ -1,5 +1,5 @@
-@use "variables" as *;
-@use "mixins" as *;
+@use "../variables" as *;
+@use "../mixins" as *;
 
 .searchBar {
   margin-right: 50px;
@@ -43,7 +43,7 @@
   .searchBar {
     margin-right: 15px;
     padding: 5px;
-    border-radius: 10px;  
+    border-radius: 10px;
   }
   .searchField {
     transition: width 100ms cubic-bezier(0, 0.51, 1, 0.59);

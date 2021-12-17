@@ -1,5 +1,5 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "../../variables" as *;
+@use "../../mixins" as *;
 
 .genreFilter {
     background: rgba(196, 196, 196, 0.2);
@@ -24,7 +24,7 @@
     justify-content: space-around;
     gap: 10px 5px;
     width: 100%;
-    height: calc(100% - 30px);;
+    height: calc(100% - 30px);
     padding: 0 10px;
     overflow-y: scroll;
     &::-webkit-scrollbar {
@@ -43,7 +43,7 @@
 }
 
 @include IntermediateView {
-    .genreFilter {     
-        height: auto;  
+    .genreFilter {
+        height: auto;
     }
 }

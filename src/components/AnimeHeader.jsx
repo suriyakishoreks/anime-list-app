@@ -1,8 +1,8 @@
 import React from 'react';
 
-import styles from '../styles/AnimeHeader.module.scss';
+import styles from '../styles/components/AnimeHeader.module.scss';
 
-export default function AnimeHeader({anime}) {
+export default function AnimeHeader({ anime }) {
 
     return (
         <div className={styles.header}>

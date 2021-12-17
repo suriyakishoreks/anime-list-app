@@ -6,7 +6,7 @@ import { RATING } from '../../constants/index';
 
 import { updateRatingFilter } from '../../store/action';
 
-import styles from '../../styles/RatingFilter.module.scss';
+import styles from '../../styles/components/submenu/RatingFilter.module.scss';
 
 export default function RatingFilter() {
 
@@ -23,7 +23,7 @@ export default function RatingFilter() {
             filterSet: new Set(),
             value: ''
         }));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [clearFilter]);
 
     function onClickHandler(id) {

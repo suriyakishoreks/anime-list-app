@@ -1,4 +1,4 @@
-@use 'variables' as *;
+@use "../variables" as *;
 
 .animeCard {
     width: 100%;
@@ -14,7 +14,7 @@
     background: rgba(196, 196, 196, 0.2);
     border-radius: 15px;
     width: 100%;
-    padding: 5px; 
+    padding: 5px;
     margin-bottom: 10px;
 }
 

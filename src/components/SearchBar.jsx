@@ -3,10 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { updateSearchFilter } from "../store/action";
 import { useHistory } from "react-router";
 import { TABLET_VIEW, MOBILE_VIEW } from '../constants/index';
-import styles from "../styles/SearchBar.module.scss";
+import styles from "../styles/components/SearchBar.module.scss";
 import searchIcon from "../assets/search.svg";
 
-export default function SearchBar({setShowLogo}) {
+export default function SearchBar({ setShowLogo }) {
 
   const inputRef = useRef(null);
   const history = useHistory();
@@ -19,8 +19,8 @@ export default function SearchBar({setShowLogo}) {
   const [searchBarMini, setSearchBarMini] = useState(true);
 
   useEffect(() => {
-    searchBarMini ? setShowLogo(true) : setShowLogo(false); 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    searchBarMini ? setShowLogo(true) : setShowLogo(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchBarMini]);
 
   useEffect(() => {
@@ -39,13 +39,13 @@ export default function SearchBar({setShowLogo}) {
   function onClickHandler() {
     if (windowViewType === TABLET_VIEW || windowViewType === MOBILE_VIEW) {
       setSearchBarMini(false);
-      setTimeout(()=>{
+      setTimeout(() => {
         inputRef.current?.focus();
-      },50);   
-    }  
+      }, 50);
+    }
   }
   function onBlurHandler() {
-   ((windowViewType === TABLET_VIEW || windowViewType === MOBILE_VIEW) && !searchValue) && setSearchBarMini(true);  
+    ((windowViewType === TABLET_VIEW || windowViewType === MOBILE_VIEW) && !searchValue) && setSearchBarMini(true);
   }
 
   return (
@@ -56,7 +56,7 @@ export default function SearchBar({setShowLogo}) {
         type="text"
         placeholder="Search for Animes"
         style={((windowViewType === TABLET_VIEW || windowViewType === MOBILE_VIEW) && searchBarMini) ?
-          { width: '0px', padding: '0px'} : {}}
+          { width: '0px', padding: '0px' } : {}}
         onChange={onChangeHandler}
         onBlur={onBlurHandler}
         value={searchValue}

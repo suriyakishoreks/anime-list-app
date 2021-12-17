@@ -1,5 +1,5 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "../variables" as *;
+@use "../mixins" as *;
 
 .row {
     position: relative;
@@ -69,7 +69,7 @@
 
 @include TabletView {
     .row {
-        h2 { 
+        h2 {
             font-size: $T_majorHeadingFontSize;
         }
     }

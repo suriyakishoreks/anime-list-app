@@ -4,7 +4,7 @@ import { endPoints } from "../API/endpoints";
 
 import { DAYS, SEASONS, getYearList, SEARCHOBJECT } from '../constants/index';
 
-import styles from '../styles/Listing.module.scss';
+import styles from '../styles/pages/Listing.module.scss';
 
 import fetchAPI from '../API/index';
 
@@ -12,7 +12,7 @@ export default function Listing() {
 
     const history = useHistory();
     const location = useLocation();
-    
+
     const { id } = useParams();
     const [API, setAPI] = useState(null);
     const [anime, setAnime] = useState([]);
@@ -53,11 +53,11 @@ export default function Listing() {
         } else if (id === "search") {
             const sObj = SEARCHOBJECT;
             // Minimum 3 characters needed for search so adding Two Empty Spaces
-            sObj.searchQuery = query.get("q").length > 2  ? query.get("q") :
-                                     (query.get("q").length > 0 ? `  ${query.get("q")}`: '');
+            sObj.searchQuery = query.get("q").length > 2 ? query.get("q") :
+                (query.get("q").length > 0 ? `  ${query.get("q")}` : '');
             sObj.rating = query.get("rating");
             sObj.genre = query.get("genre");
-            if (!(sObj.searchQuery.trim() || sObj.rating || sObj.genre ))
+            if (!(sObj.searchQuery.trim() || sObj.rating || sObj.genre))
                 history.push('/');
             const endPoint = endPoints.search(sObj);
             setAPI(endPoint);

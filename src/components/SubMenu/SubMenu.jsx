@@ -1,5 +1,5 @@
 import React from "react";
-import styles from '../../styles/SubMenu.module.scss';
+import styles from '../../styles/components/submenu/SubMenu.module.scss';
 
 import SeasonFilter from './SeasonFilter';
 import GenreFilter from './GenreFilter';

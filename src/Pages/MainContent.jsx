@@ -1,7 +1,7 @@
 import React, { Fragment, lazy, Suspense } from "react";
 import { Switch, Route } from 'react-router-dom';
 import ErrorBoundary from '../components/ErrorBoundary';
-import styles from "../styles/MainContent.module.scss";
+import styles from "../styles/pages/MainContent.module.scss";
 
 const Home = lazy(() => import("./home"));
 const Listing = lazy(() => import("./listing"));

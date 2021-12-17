@@ -5,7 +5,7 @@ import { updateGenreFilter } from '../../store/action';
 
 import CheckBox from '../CheckBox';
 import { GENRE } from '../../constants';
-import styles from '../../styles/GenreFilter.module.scss';
+import styles from '../../styles/components/submenu/GenreFilter.module.scss';
 
 export default function GenreFilter() {
 
@@ -22,12 +22,12 @@ export default function GenreFilter() {
             filterSet: new Set(),
             value: ''
         }));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [clearFilter]);
 
     function onClickHandler(id) {
         const newSet = new Set([...selectedFilter]);
-        
+
         if (newSet.has(id)) {
             newSet.delete(id);
             setSelectedFilter(newSet);

@@ -1,5 +1,5 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "../../variables" as *;
+@use "../../mixins" as *;
 
 .scheduleFilter {
     padding: 10px 20px;
@@ -41,7 +41,7 @@
 }
 
 @include IntermediateView {
-    .scheduleFilter {     
-        height: auto;  
+    .scheduleFilter {
+        height: auto;
     }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-import classes from '../styles/NoMatch.module.scss';
+import classes from '../styles/pages/NoMatch.module.scss';
 
 export default function Error() {
 

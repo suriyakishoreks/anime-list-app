@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from '../styles/AnimeCard.module.scss';
+import styles from '../styles/components/AnimeCard.module.scss';
 
 export default function AnimeCard({ anime }) {
     return (

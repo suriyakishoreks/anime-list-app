@@ -1,4 +1,4 @@
-@use 'variables' as *;
+@use "../variables" as *;
 
 .dropDown {
     position: relative;
@@ -9,7 +9,7 @@
         cursor: default;
     }
     select {
-        background: url(../assets/dropDown.svg) no-repeat 95% 50%;
+        background: url(../../assets/dropDown.svg) no-repeat 95% 50%;
         -moz-appearance: none;
         -webkit-appearance: none;
         appearance: none;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import { useSelector } from 'react-redux';
 import { MOBILE_VIEW } from '../constants/index';
-import styles from '../styles/LandscapeCarousel.module.scss';
+import styles from '../styles/components/LandscapeCarousel.module.scss';
 import tagIcon from '../assets/tag.svg';
 import leftArrowIcon from '../assets/left-arrow.png';
 import rightArrowIcon from '../assets/right-arrow.png';

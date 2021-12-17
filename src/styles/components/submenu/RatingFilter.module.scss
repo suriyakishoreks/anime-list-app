@@ -1,5 +1,5 @@
-@use 'variables' as *;
-@use 'mixins' as *;
+@use "../../variables" as *;
+@use "../../mixins" as *;
 
 .ratingFilter {
     background: rgba(196, 196, 196, 0.2);
@@ -25,8 +25,8 @@
 }
 
 @include IntermediateView {
-    .ratingFilter {     
-        height: auto; 
-        overflow: visible; 
+    .ratingFilter {
+        height: auto;
+        overflow: visible;
     }
 }

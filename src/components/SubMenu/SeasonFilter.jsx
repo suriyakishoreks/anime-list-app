@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import DropDown from '../DropDown';
 
-import {useHistory} from "react-router";
+import { useHistory } from "react-router";
 
-import {getYearList, SEASONS} from '../../constants/index';
-import styles from '../../styles/SeasonFilter.module.scss';
+import { getYearList, SEASONS } from '../../constants/index';
+import styles from '../../styles/components/submenu/SeasonFilter.module.scss';
 
 export default function SeasonFilter() {
 
@@ -26,7 +26,7 @@ export default function SeasonFilter() {
                         setActive={(val) => { setSeason(val); }}
                         containerWidth='100px'
                         dropDownKeys={Object.keys(SEASONS)}
-                        dropDownList = {SEASONS} />
+                        dropDownList={SEASONS} />
                 </div>
                 <div className={styles.filterDetail}>
                     <h5>Year</h5>
@@ -34,8 +34,8 @@ export default function SeasonFilter() {
                         active={year}
                         setActive={(val) => { setYear(val); }}
                         containerWidth='100px'
-                        dropDownKeys={Object.keys(getYearList()).sort((a, b) => b-a)} 
-                        dropDownList = {getYearList()} />
+                        dropDownKeys={Object.keys(getYearList()).sort((a, b) => b - a)}
+                        dropDownList={getYearList()} />
                 </div>
             </div>
             <button onClick={onClickHandler} className={styles.button}>Go</button>

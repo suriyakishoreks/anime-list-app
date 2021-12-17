@@ -7,7 +7,7 @@ import { setMenuStatus } from '../store/action';
 import { DESKTOP_VIEW } from '../constants/index';
 import menuOpenIcon from '../assets/menu.svg';
 import menuCloseIcon from '../assets/close.svg';
-import styles from '../styles/Header.module.scss';
+import styles from '../styles/components/Header.module.scss';
 
 export default function Header() {
 
@@ -23,7 +23,7 @@ export default function Header() {
   return (
     <Fragment>
       <Link className={styles.logo} to="/">
-         {showLogo && 'Anime List'} </Link>
+        {showLogo && 'Anime List'} </Link>
       <div className={styles.section}>
         <SearchBar setShowLogo={setShowLogo} />
         {(windowViewType !== DESKTOP_VIEW) &&

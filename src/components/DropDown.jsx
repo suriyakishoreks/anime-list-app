@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from '../styles/DropDown.module.scss';
+import styles from '../styles/components/DropDown.module.scss';
 
 export default function DropDown({ active, setActive, dropDownKeys, dropDownList, containerWidth }) {
 

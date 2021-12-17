@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import {useHistory} from "react-router";
+import { useHistory } from "react-router";
 
 import DropDown from '../DropDown';
 import { DAYS } from '../../constants';
 
-import styles from '../../styles/ScheduleFilter.module.scss';
+import styles from '../../styles/components/submenu/ScheduleFilter.module.scss';
 
 export default function ScheduleFilter() {
 
     const history = useHistory();
     const [day, setDay] = useState(0);
-    
+
     function onClickHandler() {
         history.push(`/listing/schedule?day=${day}`);
     }

@@ -7,7 +7,7 @@ import fetchAPI from '../API/index';
 import AnimeCard from '../components/AnimeCard';
 import AnimeHeader from '../components/AnimeHeader';
 
-import styles from '../styles/Anime.module.scss';
+import styles from '../styles/pages/Anime.module.scss';
 
 export default function Anime() {
 
@@ -46,7 +46,7 @@ function Related({ anime }) {
         <div>
             <h2 className={styles.contentHeading}>Related Anime</h2>
             <div className={styles.contentCardOuter}>
-                <div className={styles.contentCardInner} style={{WebkitJustifyContent: "flex-start"}}>
+                <div className={styles.contentCardInner} style={{ WebkitJustifyContent: "flex-start" }}>
                     <ul className={styles.relatedList}>
                         {Object.keys(anime.related ?? {})?.map(key =>
                             <Fragment key={key}>
@@ -74,9 +74,9 @@ function Recommendations({ recommendations }) {
         <div>
             <h2 className={styles.contentHeading}>Recommendations</h2>
             <div className={styles.contentCardOuter}>
-                <div className={styles.contentCardInner} style={{maxHeight: "400px"}}>
+                <div className={styles.contentCardInner} style={{ maxHeight: "400px" }}>
                     {recommendations.map(element =>
-                        <div key={element.mal_id} className={styles.recommendationsPoster} onClick={()=>{ onClickHandler(element.mal_id)}}>
+                        <div key={element.mal_id} className={styles.recommendationsPoster} onClick={() => { onClickHandler(element.mal_id) }}>
                             <img src={element.image_url} alt="poster" />
                             <div>{element.recommendation_count}</div>
                         </div>)}

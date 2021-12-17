@@ -1,9 +1,9 @@
-export default async function fetchAPI(url, signal=null) {
+export default async function fetchAPI(url, signal = null) {
     try {
         const response = await fetch(url, {
             signal: signal
-          });
-        console.log(response.status); 
+        });
+        // console.log(response.status); 
         const data = await response.json();
         return data;
 

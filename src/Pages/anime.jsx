@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router';
 import { Link } from "react-router-dom";
 import { endPoints } from '../API/endpoints';
@@ -9,7 +9,7 @@ import AnimeHeader from '../components/AnimeHeader';
 
 import styles from '../styles/pages/Anime.module.scss';
 
-export default function Anime() {
+export default function Anime({ setVerticalScroll }) {
 
     const { id } = useParams();
     const [anime, setAnime] = useState({});
@@ -24,6 +24,11 @@ export default function Anime() {
         }
         fetchData(id);
     }, [id]);
+
+    useEffect(() => {
+        setVerticalScroll(0);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [anime]);
 
     return (
         <div className={styles.anime}>
@@ -42,20 +47,33 @@ export default function Anime() {
 }
 
 function Related({ anime }) {
+
+    const [relatedAnimes, setRelatedAnimes] = useState({});
+
+    useEffect(() => {
+        const listObj = {};
+        Object.keys(anime.related ?? {})?.map(key => {
+            const animesList = anime.related?.[key]?.filter(element => element.type === 'anime');
+            if (animesList.length) {
+                listObj[key] = animesList;
+            }
+            return null;
+        })
+        setRelatedAnimes(listObj);
+    }, [anime]);
+
     return (
         <div>
             <h2 className={styles.contentHeading}>Related Anime</h2>
             <div className={styles.contentCardOuter}>
-                <div className={styles.contentCardInner} style={{ WebkitJustifyContent: "flex-start" }}>
-                    <ul className={styles.relatedList}>
-                        {Object.keys(anime.related ?? {})?.map(key =>
-                            <Fragment key={key}>
-                                {anime.related?.[key]?.map(element =>
-                                    element.type === 'anime' ?
-                                        <li key={element.mal_id} ><Link className={styles.relatedItem} to={`/anime/${element.mal_id}`}>
-                                            {`${element.name} (${key})`}</Link></li> : null)}
-                            </Fragment>)}
-                    </ul>
+                <div className={styles.contentCardInner} style={Object.keys(relatedAnimes).length ? { WebkitJustifyContent: "flex-start" } : {}}>
+                    {Object.keys(relatedAnimes).length ? <ul className={styles.relatedList}>
+                        {Object.keys(relatedAnimes).map(key =>
+                            relatedAnimes[key].map(element =>
+                                <li key={element.mal_id} ><Link className={styles.relatedItem} to={`/anime/${element.mal_id}`}>
+                                    {`${element.name} (${key})`}</Link></li>)
+                        )}
+                    </ul> : <p>No related animes available.</p>}
                 </div>
             </div>
         </div>
@@ -75,11 +93,11 @@ function Recommendations({ recommendations }) {
             <h2 className={styles.contentHeading}>Recommendations</h2>
             <div className={styles.contentCardOuter}>
                 <div className={styles.contentCardInner} style={{ maxHeight: "400px" }}>
-                    {recommendations.map(element =>
+                    {recommendations.length ? recommendations.map(element =>
                         <div key={element.mal_id} className={styles.recommendationsPoster} onClick={() => { onClickHandler(element.mal_id) }}>
                             <img src={element.image_url} alt="poster" />
                             <div>{element.recommendation_count}</div>
-                        </div>)}
+                        </div>) : <p>No recommendations available.</p>}
                 </div>
             </div>
         </div>

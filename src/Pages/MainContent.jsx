@@ -1,4 +1,4 @@
-import React, { Fragment, lazy, Suspense } from "react";
+import React, { Fragment, lazy, Suspense, useRef } from "react";
 import { Switch, Route } from 'react-router-dom';
 import ErrorBoundary from '../components/ErrorBoundary';
 import styles from "../styles/pages/MainContent.module.scss";
@@ -10,9 +10,15 @@ const Anime = lazy(() => import("./anime"));
 
 export default function MainContent() {
 
+  const scrollRef = useRef(null);
+
+  function setVerticalScroll(value) {
+    scrollRef.current.scrollTop = value;
+  }
+
   return (
     <Fragment>
-      <div className={styles.mainContent}>
+      <div ref={scrollRef} className={styles.mainContent}>
         <ErrorBoundary>
           <Suspense fallback={null} >
             <Switch>
@@ -20,7 +26,7 @@ export default function MainContent() {
                 <Home />
               </Route>
               <Route path="/anime/:id">
-                <Anime />
+                <Anime setVerticalScroll={setVerticalScroll} />
               </Route>
               <Route path="/listing/:id">
                 <Listing />

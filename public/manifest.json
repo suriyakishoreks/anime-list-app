@@ -20,7 +20,7 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#0a0822",
   "background_color": "#027a85",
   "description": "Anime listing app for searching animes",
   "id": "/anime-list-app/"

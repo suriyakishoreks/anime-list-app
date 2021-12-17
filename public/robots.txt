@@ -1,3 +1,3 @@
-# https://www.robotstxt.org/robotstxt.html
+# Allowing all crawlers to access any route.
 User-agent: *
 Disallow:

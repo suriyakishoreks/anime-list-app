@@ -2,6 +2,8 @@
 @use "../mixins" as *;
 
 .logo {
+  position: absolute;
+  left: 0;
   padding-left: 30px;
   font-style: normal;
   font-weight: 600;

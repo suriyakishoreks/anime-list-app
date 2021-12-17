@@ -22,8 +22,7 @@ export default function Header() {
 
   return (
     <Fragment>
-      <Link className={styles.logo} to="/">
-        {showLogo && 'Anime List'} </Link>
+      <Link className={styles.logo} to="/" style={showLogo ? {} : { display: 'none' }}>Anime List</Link>
       <div className={styles.section}>
         <SearchBar setShowLogo={setShowLogo} />
         {(windowViewType !== DESKTOP_VIEW) &&

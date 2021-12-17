@@ -19,7 +19,11 @@ export default function SearchBar({ setShowLogo }) {
   const [searchBarMini, setSearchBarMini] = useState(true);
 
   useEffect(() => {
-    searchBarMini ? setShowLogo(true) : setShowLogo(false);
+    const timeout = setTimeout(() => {
+      searchBarMini ? setShowLogo(true) : setShowLogo(false);
+    }, 50);
+
+    return () => clearTimeout(timeout);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchBarMini]);
 
